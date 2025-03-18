@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Rubik Beastly';
+    src: url('RubikBeastly-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik Wet Paint';
+    src: url('RubikWetPaint-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

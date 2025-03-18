@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Nergal's Portfolio</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Adobe</a></li>
+                    <li><a href="#photoshop">Photoshop</a></li>
+                    <li><a href="#indesign">InDesign</a></li>
+                    <li><a href="#illustrator">Illustrator</a></li>
+                    <li><a href="#after-effects">After Effects</a></li>
+                    <li><a href="#software-engineering">Software Engineering</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Explore my creative and technical projects below.</p>
+        </section>
+
+        <!-- Photoshop Section -->
+        <section id="photoshop" class="portfolio-gallery">
+            <h2>Photoshop Projects</h2>
+            <figure>
+                <img src="Images/MMA100Fall24Proj2_NergalPrescodREVISED.png" alt="The Hero's Journey">
+                <figcaption>The Hero's Journey</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/creation2.jpg" alt="Who started the fire?">
+                <figcaption>Who started the fire?</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/creation3.jpeg" alt="Dive">
+                <figcaption>Dive</figcaption>
+            </figure>
+        </section>
+
+        <!-- InDesign Section -->
+        <section id="indesign" class="portfolio-gallery">
+            <h2>InDesign Projects</h2>
+            <figure>
+                <img src="Images/Mag-Cover.png" alt="Magazine Layout">
+                <figcaption>Magazine Cover</figcaption>
+            </figure> 
+            <figure>
+                <img src="Images/Mag-Inside.png" alt="Magazine Layout">
+                <figcaption>Magazine Inside</figcaption>
+            </figure>
+        </section>
+
+        <!-- Illustrator Section -->
+        <section id="illustrator" class="portfolio-gallery">
+            <h2>Illustrator Projects</h2>
+            <figure>
+                <img src="Images/logo.png" alt="Mystic">
+                <figcaption>Mystic</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/SUNVOIDMOON.png" alt="Mystic">
+                <figcaption>Mystic</figcaption>
+            </figure>
+        </section>
+
+        <!-- After Effects Section -->
+        <section id="after-effects" class="portfolio-gallery">
+            <h2>After Effects Projects</h2>
+            <figure>
+                <video autoplay loop muted>
+                    <source src="Images/MMP Projexcttest 3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>2D sees 3D for the first time</figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="close">&times;</span>
+            <img src="#" alt="Enlarged Image">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.portfolio-gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeBtn = lightbox.querySelector('.close');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
