@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('fonts/transfonter.org-20250317-205551/RubikBeastly-Regular.woff2') format('woff2');
+    src: url('/fonts/RubikBeastly-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MyCustomFont2';
-    src: url('fonts/transfonter.org-20250317-205551/RubikWetPaint-Regular.woff2') format('woff2');
+    src: url('/fonts/RubikWetPaint-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MyCustomFont3';
-    src: url('fonts/transfonter.org-20250317-212926/RubikPixels-Regular.woff2') format('woff2');
+    src: url('/fonts/RubikPixels-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
