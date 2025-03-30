@@ -121,5 +121,42 @@
             }
         });
     </script>
+
+<script>
+    function triggerCloudTransition(cloudCount = 10) {
+      const container = document.getElementById('cloud-transition');
+      container.innerHTML = ''; // Clear old clouds
+      container.style.display = 'block';
+    
+      for (let i = 0; i < cloudCount; i++) {
+        const cloud = document.createElement('img');
+        cloud.src = 'Images/cloud-1.png'; // Your single cloud image
+        cloud.classList.add('cloud');
+    
+        // Random vertical position (10% to 80%)
+        cloud.style.top = `${Math.random() * 70 + 10}%`;
+    
+        // Random animation delay (0s to 1.5s)
+        cloud.style.animationDelay = `${Math.random() * 1.5}s`;
+    
+        container.appendChild(cloud);
+      }
+    
+      // Optional: Hide the cloud container after animation
+      setTimeout(() => {
+        container.style.display = 'none';
+      }, 4000); // Slightly longer than animation duration
+    }
+    </script>  
+
+<script>
+    // Trigger it 1 second after the page loads
+    window.onload = () => {
+      setTimeout(() => {
+        triggerCloudTransition();
+      }, 1000);
+    };
+  </script>
+
 </body>
 </html>

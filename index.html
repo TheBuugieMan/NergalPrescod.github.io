@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nergal's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- ==================== HEADER ==================== -->
     <header>
         <div class="container">
             <h1 class="logo">Nergal's Portfolio</h1>
@@ -21,7 +25,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ==================== HERO SECTION ==================== -->
     <section class="hero">
         <div class="hero-content">
             <h2>Welcome to Nergal's Portfolio</h2>
@@ -30,20 +34,25 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ==================== ABOUT SECTION ==================== -->
     <section class="about-section">
+        <!-- Left About Box -->
         <div class="fact-box left">
             <h2>About Me</h2>
-            Multimedia Developer with a Strong Technical Foundation
-I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering. With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions. My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript. Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
-           <!-- <p>• Passion for creativity and tech.</p>
-            <p>• Skilled in design, programming, and AI.</p>
-            <p>• Always learning and improving.</p> -->
+            <p>
+                Multimedia Developer with a Strong Technical Foundation<br>
+                I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering.
+                With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions.
+                My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript.
+                Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
+            </p>
         </div>
 
+        <!-- Center Sun Animation & Title -->
         <div class="center-box">
             <h2 class="multimedia-developer">Multimedia Developer</h2>
 
+            <!-- Sunrise & Sunset Canvas Animation -->
             <div class="sunset-animation">
                 <div class="sky">
                     <div class="sun"></div>
@@ -52,6 +61,7 @@ I blend creativity and technology, with expertise in digital design, UI/UX, web 
             </div>
         </div>
 
+        <!-- Right More About Box -->
         <div class="fact-box right">
             <h2>More About Me</h2>
             <p>• Love video games and music.</p>
@@ -60,10 +70,60 @@ I blend creativity and technology, with expertise in digital design, UI/UX, web 
         </div>
     </section>
 
-    <!-- Bottom Black Section with Moving Sun -->
+    <!-- ==================== BOTTOM ANIMATED SUN SECTION ==================== -->
     <div class="bottom-section">
         <div class="bottom-sun"></div>
     </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <div class="sun-footer-wrapper">
+        <div class="sun-glow"></div>
+        <footer>
+            <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
+        </footer>
+    </div>
+
+    <!-- Cloud Transition Overlay -->
+<div id="cloud-transition">
+    <!-- <img src="Images/cloud-right.png" class="cloud cloud-right" /> -->
+  </div>  
+
+  <script>
+    function triggerCloudTransition(cloudCount = 10) {
+      const container = document.getElementById('cloud-transition');
+      container.innerHTML = ''; // Clear old clouds
+      container.style.display = 'block';
+    
+      for (let i = 0; i < cloudCount; i++) {
+        const cloud = document.createElement('img');
+        cloud.src = 'Images/cloud-1.png'; // Your single cloud image
+        cloud.classList.add('cloud');
+    
+        // Random vertical position (10% to 80%)
+        cloud.style.top = `${Math.random() * 70 + 10}%`;
+    
+        // Random animation delay (0s to 1.5s)
+        cloud.style.animationDelay = `${Math.random() * 1.5}s`;
+    
+        container.appendChild(cloud);
+      }
+    
+      // Optional: Hide the cloud container after animation
+      setTimeout(() => {
+        container.style.display = 'none';
+      }, 4000); // Slightly longer than animation duration
+    }
+    </script>  
+
+<script>
+    // Trigger it 1 second after the page loads
+    window.onload = () => {
+      setTimeout(() => {
+        triggerCloudTransition();
+      }, 1000);
+    };
+  </script>
+  
 
 </body>
 </html>
