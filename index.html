@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <!-- ==================== HEADER ==================== -->
+   <!-- ==================== HEADER ==================== -->
     <header>
         <div class="container">
             <h1 class="logo">Nergal's Portfolio</h1>
@@ -27,6 +27,7 @@
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero">
+        <div id="js-stars"></div>
         <div class="hero-content">
             <h2>Welcome to Nergal's Portfolio</h2>
             <p>Explore my journey in design and development.</p>
@@ -34,23 +35,23 @@
         </div>
     </section>
 
+    <section class="starry-intro">
+        <div class="center-box" style="position: relative;">
+            <canvas id="constellation-canvas"></canvas>
+            <div id="floating-symbols"></div>
+         <h2 class="multimedia-developer">Multimedia Developer</h2>
+         <p class="subtitle">Creating Experiences at the Intersection of Art & Code</p>
+         <div id="orbiting-orbs"></div>
+    </div>
+      </section>
+      
     <!-- ==================== ABOUT SECTION ==================== -->
     <section class="about-section">
         <!-- Left About Box -->
-        <div class="fact-box left">
-            <h2>About Me</h2>
-            <p>
-                Multimedia Developer with a Strong Technical Foundation<br>
-                I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering.
-                With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions.
-                My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript.
-                Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
-            </p>
-        </div>
 
         <!-- Center Sun Animation & Title -->
         <div class="center-box">
-            <h2 class="multimedia-developer">Multimedia Developer</h2>
+           
 
             <!-- Sunrise & Sunset Canvas Animation -->
             <div class="sunset-animation">
@@ -61,13 +62,6 @@
             </div>
         </div>
 
-        <!-- Right More About Box -->
-        <div class="fact-box right">
-            <h2>More About Me</h2>
-            <p>• Love video games and music.</p>
-            <p>• Learning Spanish on Duolingo.</p>
-            <p>• Exploring robotics and AI.</p>
-        </div>
     </section>
 
     <!-- ==================== BOTTOM ANIMATED SUN SECTION ==================== -->
@@ -75,18 +69,50 @@
         <div class="bottom-sun"></div>
     </div>
 
-    <!-- ==================== FOOTER ==================== -->
-    <div class="sun-footer-wrapper">
-        <div class="sun-glow"></div>
-        <footer>
-            <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
-        </footer>
-    </div>
-
     <!-- Cloud Transition Overlay -->
 <div id="cloud-transition">
     <!-- <img src="Images/cloud-right.png" class="cloud cloud-right" /> -->
   </div>  
+
+  <section class="about-me">
+    <div class="about-heading">
+      <h2 class="about-title">About Me</h2>
+      <p class="about-subtitle">
+        Multimedia Developer with a Strong Technical Foundation
+      </p>
+    </div>
+  
+    <div class="about-description">
+      <p>
+        I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering. 
+        With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions. 
+      </p>
+      <p>
+        My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript. 
+        Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
+      </p>
+    </div>
+  
+    <div class="about-cards">
+      <div class="fact-box">
+        <h3>About Me</h3>
+        <ul>
+          <li>Love video games and music</li>
+          <li>Learning Spanish on Duolingo</li>
+          <li>Exploring AI and Robotics</li>
+        </ul>
+      </div>
+  
+      <div class="fact-box">
+        <h3>More About Me</h3>
+        <ul>
+          <li>Skilled in UX/UI and development</li>
+          <li>Backend software experience</li>
+          <li>Creative, curious, and always improving</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <script>
     function triggerCloudTransition(cloudCount = 500, callback = null) {
@@ -150,8 +176,131 @@
       }, 1000);
     };
   </script>
+
+<script>
+    const starContainer = document.getElementById('js-stars');
   
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+  
+      // Random positions and animation duration/delay
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${Math.random() * 2 + 2}s`;
+      star.style.animationDelay = `${Math.random() * 3}s`;
+  
+      starContainer.appendChild(star);
+    }
+  </script>
+
+<script>
+    const symbolContainer = document.getElementById('floating-symbols');
+    const symbols = ['★', '☀', '✦', '✧', '⛧', '☾'];
+  
+    for (let i = 0; i < 30; i++) {
+      const sym = document.createElement('span');
+      sym.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      sym.style.position = 'absolute';
+      sym.style.left = `${Math.random() * 100}%`;
+      sym.style.bottom = '-20px';
+      sym.style.fontSize = `${Math.random() * 10 + 12}px`;
+      sym.style.opacity = Math.random().toFixed(2);
+      sym.style.animation = `floatUp ${Math.random() * 5 + 5}s linear infinite`;
+      symbolContainer.appendChild(sym);
+    }
+  </script>
+
+  <script>
+  const orbContainer = document.getElementById('orbiting-orbs');
+
+  for (let i = 0; i < 3; i++) {
+    const orb = document.createElement('div');
+    orb.className = 'orb';
+    orb.style.animationDuration = `${8 + i * 2}s`;
+    orbContainer.appendChild(orb);
+  }
+</script>
+  
+<script>
+    const canvas = document.getElementById('constellation-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    const stars = [];
+  
+    function resizeCanvas() {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    }
+  
+    function createStars(count) {
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2
+        });
+      }
+    }
+  
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'white';
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, 1.5, 0, 2 * Math.PI);
+        ctx.fill();
+      });
+  
+      // Connect stars with lines
+      for (let i = 0; i < stars.length; i++) {
+        for (let j = i + 1; j < stars.length; j++) {
+          const dx = stars[i].x - stars[j].x;
+          const dy = stars[i].y - stars[j].y;
+          const dist = dx * dx + dy * dy;
+          if (dist < 5000) {
+            ctx.beginPath();
+            ctx.moveTo(stars[i].x, stars[i].y);
+            ctx.lineTo(stars[j].x, stars[j].y);
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.stroke();
+          }
+        }
+      }
+    }
+  
+    function update() {
+      stars.forEach(star => {
+        star.x += star.vx;
+        star.y += star.vy;
+  
+        if (star.x < 0 || star.x > width) star.vx *= -1;
+        if (star.y < 0 || star.y > height) star.vy *= -1;
+      });
+    }
+  
+    function animate() {
+      draw();
+      update();
+      requestAnimationFrame(animate);
+    }
+  
+    resizeCanvas();
+    createStars(60);
+    animate();
+    window.addEventListener('resize', resizeCanvas);
+  </script>
+  
+
   <audio id="cloud-sound" src="sounds/cloud-whoosh.mp3.wav" preload="auto"></audio>
 
+<!-- ==================== FOOTER ==================== -->
+<div class="sun-footer-wrapper">
+    <div class="sun-glow"></div>
+    <footer>
+        <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
+    </footer>
+</div>
 </body>
 </html>

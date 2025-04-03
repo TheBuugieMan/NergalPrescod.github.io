@@ -39,7 +39,9 @@
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    background-color: #000000;
+    background: url("Images/HomeBackground.png") no-repeat center center/cover;
+
+  /*  background-color: #000000; */
     color: #ffffff;
     line-height: 1.6;
   }
@@ -111,7 +113,7 @@
   /* ---------------------------- */
   .hero {
     background: url('Images/backgroundone.png') no-repeat center center/cover;
-    color: #fff;
+    color:#FF9900;
     padding: 80px 20px;
     text-align: center;
     position: relative;
@@ -123,16 +125,89 @@
     justify-content: center;
     align-items: center;
   }
+
+  #js-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
   
-  .hero h2 {
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite ease-in-out;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }  .hero h2 {
+    font-family: 'Rubik Moonrocks', cursive;
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
   
   .hero p {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
   }
+
+  .hero h2, .hero p {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+  }
+
+  .hero a.btn {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    animation: pulseBtn 2s infinite;
+  }
   
+  @keyframes pulseBtn {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+    }
+  }
+  
+  .hero-content {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 222;
+  }
+
+  .hero-content h2 {
+    font-size: 3rem;
+    font-family: 'Rubik Moonrocks', sans-serif;
+    text-shadow: 2px 2px 4px #000;
+  }
+  
+  .hero-content a.btn {
+    background: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 40px;
+    display:inline-block
+  }
+  
+  .hero-content a.btn:hover {
+    background: #FF9900;
+  }
+    
   /* ---------------------------- */
   /*        ABOUT SECTION        */
   /* ---------------------------- */
@@ -142,7 +217,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    background-color: black;
+    background: url("Images/HomeBackground1.png") no-repeat center center/cover;
+    background-color: #000000;
   }
   
   .fact-box {
@@ -171,10 +247,104 @@
     justify-content: center;
   }
   
+  .starry-intro {
+    background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(255, 165, 0, 0.5) 60%,
+    #fff3cc 100%);
+  padding: 120px 20px 80px;
+  text-align: center;
+  color: white;  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.85;
+  }
+  
+  .multimedia-developer::after {
+    content: '';
+    display: block;
+    width: 80px;
+    margin: 10px auto 0;
+    height: 3px;
+    background: linear-gradient(to right, #ff9900, #ff2e2e);
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.6);
+  }
+
+  #floating-symbols span {
+    color: #ffffff;
+    pointer-events: none;
+    animation: floatUp 10s linear infinite;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-300px);
+      opacity: 0;
+    }
+  }
+  
+  #floating-symbols {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  #orbiting-orbs {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 40px auto;
+    z-index: 3;
+  }
+  
+  .orb {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffd700, #ff4500);
+    top: 50%;
+    left: 50%;
+    transform-origin: -60px;
+    animation: orbit 10s linear infinite;
+  }
+  
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(60px);
+    }
+    100% {
+      transform: rotate(360deg) translateX(60px);
+    }
+  }
+  
+
+  #constellation-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+
   /* ---------------------------- */
   /*      SUNSET ANIMATION       */
   /* ---------------------------- */
-  .sunset-animation {
+  /* .sunset-animation {
     width: 100%;
     height: 200px;
     position: relative;
@@ -215,16 +385,17 @@
     50% { left: 50%; top: 10%; }
     100% { left: 100%; top: 80%; }
   }
-  
+   */
   /* ---------------------------- */
   /*     FLOATING SUN BOTTOM     */
   /* ---------------------------- */
   .bottom-section {
-    background: black;
+    display: none;
+    /* background: black;
     height: 0px;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 100%; */
   }
   
   .bottom-sun {
@@ -461,3 +632,84 @@
     90% { opacity: 1; }
     100% { transform: translateX(110vw); opacity: 0; }
   }
+
+  .about-me {
+    background: url("Images/AboutmeBackground.png") no-repeat center center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .about-heading {
+    margin-bottom: 30px;
+  }
+  
+  .about-title {
+    font-size: 3rem;
+    color: #ff2e2e;
+    font-family: 'MyCustomFont2', sans-serif;
+  }
+  
+  .about-subtitle {
+    color: #f2ff78;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .about-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  
+  .about-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .fact-box {
+    background-color: #DAA520;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: black;
+    font-weight: bold;
+  }
+  
+  .fact-box ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .fact-box li {
+    margin-bottom: 10px;
+  }
+  
+  /* Make Responsive */
+  @media (max-width: 768px) {
+    .about-title {
+      font-size: 2rem;
+    }
+  
+    .about-subtitle {
+      font-size: 1rem;
+    }
+  
+    .about-description {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+  
+    .about-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+    
+
+  
