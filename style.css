@@ -68,6 +68,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    height: 80px;
   }
   
   header .container {
@@ -77,6 +78,7 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    flex-wrap: wrap;
   }
   
   .logo {
@@ -107,25 +109,43 @@
   .nav-links li a.active {
     background: #00bcd4;
   }
+
+  @media (max-width: 768px) {
+    header .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .nav-links li {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+  
   
   /* ---------------------------- */
   /*         HERO SECTION        */
   /* ---------------------------- */
   .hero {
     background: url('Images/backgroundone.png') no-repeat center center/cover;
-    color:#FF9900;
-    padding: 80px 20px;
+    color: #FF9900;
+    padding: 140px 20px 80px; /* Push content down by header height */
     text-align: center;
     position: relative;
-    width: 100%;
-    height: 300px;
+    min-height: 100vh;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
-
+  
   #js-stars {
     position: absolute;
     top: 0;
@@ -146,6 +166,16 @@
     opacity: 0.8;
     animation: twinkle 3s infinite ease-in-out;
   }
+
+  .starry-intro .star-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
   
   @keyframes twinkle {
     0%, 100% { opacity: 0.2; transform: scale(1); }
@@ -218,6 +248,12 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0), #000); /* Adjust based on next section */
     z-index: 2;
   }
+/* 
+#projects {
+  min-height: 100vh;
+  background: url("Images/HomeBackground.png") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed; */
 
   /* ---------------------------- */
   /*        ABOUT SECTION        */
@@ -228,7 +264,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    background: url("Images/HomeBackground1.png") no-repeat center center/cover;
+    /* background: url("Images/HomeBackground1.png") no-repeat center center/cover; */
     background-color: #000000;
   }
   
@@ -259,19 +295,19 @@
   }
   
   .starry-intro {
-    /* overflow: hidden;
-    position: relative; */
-    background: linear-gradient(to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.8) 20%,
-    rgba(255, 165, 0, 0.5) 60%,
-    #fff3cc 100%);
-  padding: 120px 20px 80px;
-  text-align: center;
-  color: white;  
-    min-height: 700px;
-}
-
+    background: url("Images/HomeBackground.png") no-repeat center center / cover;
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
   .subtitle {
     font-size: 1.3rem;
     color: #ffffff;
@@ -286,8 +322,11 @@
     width: 80px;
     margin: 10px auto 0;
     height: 3px;
-    background: linear-gradient(to right, #ff9900, #ff2e2e);
-    border-radius: 4px;
+    background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(255, 165, 0, 0.5) 60%,
+    #fff3cc 100%);    border-radius: 4px;
     box-shadow: 0 0 8px rgba(255, 153, 0, 0.6);
   }
 
@@ -505,8 +544,16 @@
     margin: 0;
     width: 100%;
     max-width: 300px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
   }
   
+  .portfolio-gallery figure.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .portfolio-gallery img,
   .portfolio-gallery video {
     width: 100%;
@@ -521,6 +568,19 @@
   .portfolio-gallery video:hover {
     transform: scale(1.05);
   }
+
+  .portfolio-page {
+    background: url("Images/HomeBackground.png") no-repeat center center / cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+
+  .portfolio-page main {
+    min-height: 100vh;
+    padding-bottom: 60px; /* buffer so it doesn't look cut off */
+  }
+  
+  
   
   /* ---------------------------- */
   /*           LIGHTBOX          */

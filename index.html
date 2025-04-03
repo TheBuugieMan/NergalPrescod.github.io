@@ -36,6 +36,8 @@
     </section>
 
     <section class="starry-intro">
+        <div class="star-container"></div>
+
         <div class="center-box" style="position: relative;">
             <canvas id="constellation-canvas"></canvas>
             <div id="floating-symbols"></div>
@@ -292,6 +294,16 @@
     window.addEventListener('resize', resizeCanvas);
   </script>
   
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+  const hero = document.querySelector('.hero');
+  if (header && hero) {
+    const headerHeight = header.offsetHeight;
+    hero.style.paddingTop = `${headerHeight}px`;
+  }
+});
+  </script>
 
   <audio id="cloud-sound" src="sounds/cloud-whoosh.mp3.wav" preload="auto"></audio>
 

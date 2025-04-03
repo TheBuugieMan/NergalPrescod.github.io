@@ -25,8 +25,11 @@
         </div>
     </header>
 
+    <body class="portfolio-page">
+        <div id="js-stars"></div>
     <main>
         <section class="hero">
+
             <h2>Welcome to My Portfolio</h2>
             <p>Explore my creative and technical projects below.</p>
         </section>
@@ -89,14 +92,14 @@
 
         <!-- Lightbox -->
         <div class="lightbox" id="lightbox">
-            <span class="close">&times;</span>
-            <img src="#" alt="Enlarged Image">
-        </div>
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="Project Preview">
+          </div>
     </main>
 
-    <footer>
+    <!-- <footer>
         <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
-    </footer>
+    </footer> -->
 
 <!-- Cloud Transition Overlay -->
 <div id="cloud-transition"></div>
@@ -154,14 +157,54 @@
       });
     });
     </script>
-    
-  // Trigger when page loads
-  window.onload = () => {
-    setTimeout(() => {
-      triggerCloudTransition();
-    }, 1000);
-  };
+<script>
+function createStarField() {
+    const starsContainer = document.getElementById("js-stars");
+    if (!starsContainer) return;
+  
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${2 + Math.random() * 3}s`;
+      starsContainer.appendChild(star);
+    }
+  }
+  
+  window.addEventListener("DOMContentLoaded", createStarField);
+  </script>
+    <script>
+        document.querySelectorAll('.portfolio-gallery img, .portfolio-gallery video').forEach(item => {
+  item.addEventListener('click', () => {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = item.src;
+    lightbox.style.display = 'flex';
+  });
+});
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+
 </script>
+
+<script>
+    const figures = document.querySelectorAll(".portfolio-gallery figure");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+figures.forEach(fig => observer.observe(fig));
+</script>
+
 
 <audio id="cloud-sound" src="sounds/cloud-whoosh.mp3.wav" preload="auto"></audio>
 
