@@ -915,44 +915,28 @@ body.portfolio-page header {
     }
   }
   
-  @media (max-width: 768px) {
-    header {
-      height: auto;
-      padding: 10px 20px;
-      text-align: center;
-    }
-  
-    .logo {
-      font-size: 1.2rem; /* scale down */
-      display: block;
-      margin-bottom: 10px;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .nav-links li {
-      margin: 8px 0;
-    }
-  
-    .hero h2 {
-      font-size: 1.8rem;
-    }
-  
-    .hero p {
-      font-size: 1rem;
-    }
-  }
-/* Hide nav links by default on small screens */
+/* Default: hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    color: yellow;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
+    align-items: center;
     background: rgba(0, 0, 0, 0.85);
     position: absolute;
-    top: 60px;
+    top: 60px; /* Adjust if your header is taller */
     left: 0;
     width: 100%;
     z-index: 999;
@@ -962,20 +946,6 @@ body.portfolio-page header {
   .nav-links.active {
     display: flex;
   }
-
-  .menu-toggle {
-    display: block;
-    color: yellow;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1000;
-  }
-}
-
-/* By default, hide menu toggle on desktop */
-.menu-toggle {
-  display: none;
 }
 
   
