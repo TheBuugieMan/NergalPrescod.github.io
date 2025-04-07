@@ -182,17 +182,27 @@
 
   <!-- 🖼️ Lightbox Functionality -->
   <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+  
+    // Show lightbox on click
     document.querySelectorAll('.portfolio-gallery img, .portfolio-gallery video').forEach(item => {
       item.addEventListener('click', () => {
-        const lightbox = document.getElementById('lightbox');
-        const img = document.getElementById('lightbox-img');
-        img.src = item.src;
+        lightboxImg.src = item.src;
         lightbox.style.display = 'flex';
       });
     });
-
+  
+    // Close lightbox when clicking outside the image or the image itself
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox || event.target === lightboxImg) {
+        lightbox.style.display = 'none';
+      }
+    });
+  
+    // Close button (optional, already present)
     function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
+      lightbox.style.display = 'none';
     }
   </script>
 
