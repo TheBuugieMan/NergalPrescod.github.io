@@ -945,6 +945,38 @@ body.portfolio-page header {
       font-size: 1rem;
     }
   }
+/* Hide nav links by default on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: yellow;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+  }
+}
+
+/* By default, hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+}
 
   
   @media (max-width: 768px) {
