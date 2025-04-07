@@ -16,6 +16,7 @@
     <header>
         <div class="container">
             <h1 class="logo">Nergal's Portfolio</h1>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -355,5 +356,13 @@
         <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
     </footer>
 </div>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
