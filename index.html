@@ -20,6 +20,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="portfolio.html">Adobe Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -113,6 +114,24 @@
           <li>Creative, curious, and always improving</li>
         </ul>
       </div>
+
+      <div class="skills-columns">
+        <div class="skills-column">
+          <span class="skill-bubble">HTML</span>
+          <span class="skill-bubble">CSS</span>
+          <span class="skill-bubble">JavaScript</span>
+          <span class="skill-bubble">SQL</span>
+          <span class="skill-bubble">C#</span>
+        </div>
+        <div class="skills-column">
+          <span class="skill-bubble">Python</span>
+          <span class="skill-bubble">After Effects</span>
+          <span class="skill-bubble">Photoshop</span>
+          <span class="skill-bubble">Illustrator</span>
+          <span class="skill-bubble">InDesign</span>
+        </div>
+      </div>
+            
     </div>
   </section>
 
@@ -304,6 +323,28 @@
   }
 });
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const bubbles = document.querySelectorAll(".skill-bubble");
+    const container = document.querySelector(".skills-floating-area");
+
+    if (!container) return;
+
+    const areaWidth = container.offsetWidth;
+    const areaHeight = container.offsetHeight;
+
+    bubbles.forEach((bubble, i) => {
+      const randX = Math.random() * (areaWidth - 100);
+      const randY = Math.random() * (areaHeight - 40);
+      
+      bubble.style.left = `${randX}px`;
+      bubble.style.top = `${randY}px`;
+      bubble.style.animationDuration = `${20 + Math.random() * 10}s`;
+      bubble.style.animationDelay = `${Math.random() * 10}s`;
+    });
+  });
+</script>
 
   <audio id="cloud-sound" src="sounds/cloud-whoosh.mp3.wav" preload="auto"></audio>
 
