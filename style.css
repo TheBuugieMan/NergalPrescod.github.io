@@ -128,7 +128,6 @@
     }
   }
   
-  
   /* ---------------------------- */
   /*         HERO SECTION        */
   /* ---------------------------- */
@@ -160,7 +159,6 @@
   pointer-events: none;
 }
 
-  
   #js-stars {
     position: absolute;
     top: 0;
@@ -191,7 +189,6 @@
     pointer-events: none;
   }
   
-  
   @keyframes twinkle {
     0%, 100% { opacity: 0.2; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.5); }
@@ -202,7 +199,6 @@
   }
 
   /* ---------- PORTFOLIO-ONLY STYLING ---------- */
-
 
 body.portfolio-page #js-stars {
   position: fixed;
@@ -632,8 +628,6 @@ body.portfolio-page header {
     padding-bottom: 60px; /* buffer so it doesn't look cut off */
   }
   
-  
-  
   /* ---------------------------- */
   /*           LIGHTBOX          */
   /* ---------------------------- */
@@ -948,8 +942,7 @@ body.portfolio-page header {
   }
 }
 
-  
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .hero {
       background: url('Images/backgroundone2-414x300.jpg') no-repeat center center / cover;
       background-attachment: scroll;
