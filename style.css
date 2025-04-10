@@ -949,7 +949,22 @@ body.portfolio-page header {
       padding-top: 120px;
     }
   }
-  
+   
+  @media (min-width: 481px) and (max-width: 768px) {
+  .hero {
+    background: url('Images/backgroundone2-820x450.jpg') no-repeat center center / cover;
+    background-attachment: scroll;
+    padding-top: 120px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+  }
   
   /* @keyframes floatRandom {
     0%   { transform: translate(0, 0); }
