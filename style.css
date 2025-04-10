@@ -953,9 +953,10 @@ body.portfolio-page header {
 }
 
 /* TABLETS: 481px - 1024px */
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: 1024px)and (orientation: landscape) {
   .hero {
-    background: url('Images/TabletBckg.png') no-repeat center center / cover;
+    background: url('Images/TabletBckg.png') no-repeat center center / contain;
+    background-color: black;
     background-attachment: scroll;
     padding-top: 140px;
   }
