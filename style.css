@@ -968,6 +968,13 @@ body.portfolio-page header {
   }
 }
   
+#js-stars,
+#floating-symbols,
+#constellation-canvas {
+  outline: 2px dashed red; /* Only for testing */
+}
+
+
   /* @keyframes floatRandom {
     0%   { transform: translate(0, 0); }
     25%  { transform: translate(100px, -50px); }
