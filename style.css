@@ -947,7 +947,6 @@ body.portfolio-page header {
 @media (max-width: 480px) {
   .hero {
     background: url('Images/PhoneBckg.png') no-repeat center center / cover;
-    background-size: contain; /* or cover if you prefer fill */
     background-attachment: scroll;
     padding-top: 120px;
   }
