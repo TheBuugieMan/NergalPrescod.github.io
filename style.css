@@ -945,7 +945,8 @@ body.portfolio-page header {
   /* PHONE ONLY: 0px - 480px */
 @media (max-width: 480px) {
   .hero {
-    background: url('Images/backgroundone2-414x300.jpg') no-repeat center center / cover;
+    background: url('Images/backgroundonePhone.jpg') no-repeat center center / cover;
+    background-size: contain; /* or cover if you prefer fill */
     background-attachment: scroll;
     padding-top: 120px;
   }
@@ -954,7 +955,7 @@ body.portfolio-page header {
 /* TABLETS: 481px - 1024px */
 @media (min-width: 481px) and (max-width: 1024px) {
   .hero {
-    background: url('Images/backgroundone2-820x450.jpg') no-repeat center center / cover;
+    background: url('Images/backgroundoneTablet.jpg') no-repeat center center / cover;
     background-attachment: scroll;
     padding-top: 140px;
   }
