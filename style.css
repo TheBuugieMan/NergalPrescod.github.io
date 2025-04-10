@@ -149,14 +149,15 @@
   #js-stars,
 #floating-symbols,
 #constellation-canvas {
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw; /* Full width */
-  height: 100vh; /* Full height */
-  z-index: 1;
-  overflow: hidden;
-  pointer-events: none;
+  width: 100%;
 }
 
   #js-stars {
@@ -945,7 +946,7 @@ body.portfolio-page header {
   /* PHONE ONLY: 0px - 480px */
 @media (max-width: 480px) {
   .hero {
-    background: url('Images/backgroundonePhone.jpg') no-repeat center center / cover;
+    background: url('Images/PhoneBckg.png') no-repeat center center / cover;
     background-size: contain; /* or cover if you prefer fill */
     background-attachment: scroll;
     padding-top: 120px;
@@ -955,7 +956,7 @@ body.portfolio-page header {
 /* TABLETS: 481px - 1024px */
 @media (min-width: 481px) and (max-width: 1024px) {
   .hero {
-    background: url('Images/backgroundoneTablet.jpg') no-repeat center center / cover;
+    background: url('Images/TabletBckg.png') no-repeat center center / cover;
     background-attachment: scroll;
     padding-top: 140px;
   }
@@ -969,12 +970,6 @@ body.portfolio-page header {
   }
 }
   
-#js-stars,
-#floating-symbols,
-#constellation-canvas {
-  outline: 2px dashed red; /* Only for testing */
-}
-
 
   /* @keyframes floatRandom {
     0%   { transform: translate(0, 0); }
