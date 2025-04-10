@@ -942,29 +942,31 @@ body.portfolio-page header {
   }
 }
 
-  @media (max-width: 480px) {
-    .hero {
-      background: url('Images/backgroundone2-414x300.jpg') no-repeat center center / cover;
-      background-attachment: scroll;
-      padding-top: 120px;
-    }
-  }
-   
-  @media (min-width: 481px) and (max-width: 768px) {
+  /* PHONE ONLY: 0px - 480px */
+@media (max-width: 480px) {
   .hero {
-    background: url('Images/backgroundone2-820x450.jpg') no-repeat center center / cover;
+    background: url('Images/backgroundone2-414x300.jpg') no-repeat center center / cover;
     background-attachment: scroll;
     padding-top: 120px;
   }
+}
+
+/* TABLETS: 481px - 1024px */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .hero {
+    background: url('Images/backgroundone2-820x450.jpg') no-repeat center center / cover;
+    background-attachment: scroll;
+    padding-top: 140px;
+  }
 
   .hero h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
-  }
+}
   
   /* @keyframes floatRandom {
     0%   { transform: translate(0, 0); }
