@@ -952,10 +952,17 @@ body.portfolio-page header {
   }
 }
 
+@media (max-width: 480px) {
+  .starry-intro {
+    background: url('Images/StarrybkgPhone.png') no-repeat center center / cover;
+    background-attachment: scroll;
+  }
+}
+
 /* TABLETS: 481px - 1024px */
-@media (min-width: 481px) and (max-width: 1024px)and (orientation: landscape) {
+@media (min-width: 481px) and (max-width: 1300px) {
   .hero {
-    background: url('Images/TabletBckg.png') no-repeat center center / contain;
+    background: url('Images/TabletBckg.png') no-repeat center center / cover;
     background-color: black;
     background-attachment: scroll;
     padding-top: 140px;
