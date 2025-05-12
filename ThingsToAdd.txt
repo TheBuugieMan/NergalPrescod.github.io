@@ -1,0 +1,10 @@
+Need to add:
+
+Change the nergals portfolio to another color for better readiability
+-Espcially on tablet
+-Edit the about me section
+-Add figma protypes to the showcase
+-Edit the cloud animation
+-publish it to google
+-Add software engineering section
+-Enhance it overall
