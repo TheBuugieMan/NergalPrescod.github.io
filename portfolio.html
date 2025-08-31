@@ -81,10 +81,6 @@
     <section id="illustrator" class="portfolio-gallery">
       <h2>Illustrator Projects</h2>
       <figure>
-        <img src="Images/logo.png" alt="Mystic" />
-        <figcaption>Mystic</figcaption>
-      </figure>
-      <figure>
         <img src="Images/SUNVOIDMOON.png" alt="Mystic" />
         <figcaption>The birth of shadows</figcaption>
       </figure>
@@ -94,7 +90,7 @@
     <section id="after-effects" class="portfolio-gallery">
       <h2>After Effects Projects</h2>
       <figure>
-        <video autoplay loop muted>
+        <video autoplay loop muted playsinline>
           <source src="Images/MMP Projexcttest 3.mp4" type="video/mp4" />
           
         </video>
@@ -103,31 +99,7 @@
     </section>
 
     <!-- 🎞️ Figma -->
-     <section id="illustrator" class="portfolio-gallery">
-      <h2>UX/UI Projects (Figma)</h2>
-      <figure>
-        <img src="Images/FigmaGamePrototype.png" alt="2dRpg" />
-        <figcaption>2D RPG</figcaption>
-      </figure>
-      <figure>
-        <img src="Images/FigmaSocialMediaPrototype.png" alt="Social Media" />
-        <figcaption>Social Media app Prototype</figcaption>
-      </figure>
-      <figure>
-        <img src="Images/Solo Levling.png" alt="Solo Leveling" />
-        <figcaption>Solo Leveling</figcaption>
-      </figure>
-      <figure>
-        <img src="Images/FigmaAiGenerated.png" alt="FigmaAiGenerated" />
-        <figcaption>AI Generated Prototype</figcaption>
-      </figure>
-      <figure>
-        <img src="Images/landing page.jpg" alt="Landing Page" />
-        <figcaption>Landing Page</figcaption>
-      </figure>
-    </section>
-  
-
+     
     <!-- 🔍 Lightbox for Clicked Projects -->
     <div class="lightbox" id="lightbox">
       <span class="close" onclick="closeLightbox()">&times;</span>
@@ -162,7 +134,7 @@
     
   <!-- ☁️ Cloud Transition Script -->
   <script>
-    function triggerCloudTransition(cloudCount = 500, callback = null) {
+    function triggerCloudTransition(cloudCount = 200, callback = null) {
       const container = document.getElementById('cloud-transition');
       container.innerHTML = '<div class="cloud-fade-bg"></div>';
       container.style.display = 'block';
