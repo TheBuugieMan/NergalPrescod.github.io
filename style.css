@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    background: url("Images/HomeBackground.png") no-repeat center center/cover;
+    background: url("Images/HomeBackground.webp") no-repeat center center/cover;
 
   /*  background-color: #000000; */
     color: #ffffff;
@@ -263,7 +263,7 @@ font-family: 'MyCustomFont4', san sans-serif;
 }
 
 body.portfolio-page {
-  background: url("Images/HomeBackground.png") no-repeat center center / cover;
+  background: url("Images/HomeBackground.webp") no-repeat center center / cover;
   background-attachment: fixed;
 }
 
@@ -274,8 +274,7 @@ body.portfolio-page header {
 }
 
   .portfolio-gallery {
-  margin-bottom: 150px; /* or clamp(80px, 10vh, 200px) for responsiveness */
-}
+margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 /* Portfolio styling section ends */
 
   .hero p {
@@ -387,7 +386,7 @@ body.portfolio-page header {
   }
   
   .starry-intro {
-    background: url("Images/HomeBackground.png") no-repeat center center / cover;
+    background: url("Images/HomeBackground.webp") no-repeat center center / cover;
     background-attachment: fixed;
     color: white;
     min-height: 100vh;
@@ -422,7 +421,7 @@ body.portfolio-page header {
     box-shadow: 0 0 8px rgba(255, 153, 0, 0.6);
   }
 
-  #floating-symbols span {
+  /* #floating-symbols span {
     color: #ffffff;
     pointer-events: none;
     animation: floatUp 10s linear infinite;
@@ -485,7 +484,7 @@ body.portfolio-page header {
     height: 100%;
     z-index: 1;
   }
-  
+   */
 
   /* ---------------------------- */
   /*      SUNSET ANIMATION       */
@@ -662,7 +661,7 @@ body.portfolio-page header {
   }
 
   .portfolio-page {
-    background: url("Images/HomeBackground.png") no-repeat center center / cover;
+    background: url("Images/HomeBackground.webp") no-repeat center center / cover;
     min-height: 100vh;
     background-attachment: fixed;
   }
@@ -800,87 +799,9 @@ body.portfolio-page header {
     100% { transform: translateX(110vw); opacity: 0; }
   }
 
-  .about-me {
-    position: relative;
-    margin-top: 2500px;
-    /* background: url("Images/AboutmeBackground.png") no-repeat center center/cover; */
-    padding: 80px 20px;
-    text-align: center;
-    color: #fff;
-  }
   
-  .about-heading {
-    margin-bottom: 30px;
-  }
-  
-  .about-title {
-    font-size: 5rem;
-    color: #ff2e2e;
-    font-family: 'MyCustomFont4', sans-serif;
-  }
-  
-  .about-subtitle {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
-  .about-description {
-    max-width: 800px;
-    margin: 0 auto 50px;
-    line-height: 1.8;
-    color: white;
-    font-size: 1.05rem;
-  }
-  
-  .about-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  
-  .fact-box {
-    background-color: #DAA520;
-    padding: 20px;
-    border-radius: 12px;
-    width: 250px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    color: black;
-    font-weight: bold;
-  }
-  
-  .fact-box ul {
-    padding-left: 20px;
-    margin-top: 10px;
-  }
-  
-  .fact-box li {
-    margin-bottom: 10px;
-  }
-  
-  /* Make Responsive */
-  @media (max-width: 768px) {
-    .about-title {
-      font-size: 2rem;
-    }
-  
-    .about-subtitle {
-      font-size: 1rem;
-    }
-  
-    .about-description {
-      font-size: 1rem;
-      padding: 0 10px;
-    }
-  
-    .about-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
 
+  
   .contact-section {
     max-width: 600px;
     margin: 120px auto;
@@ -993,7 +914,7 @@ body.portfolio-page header {
   /* PHONE ONLY: 0px - 480px */
 @media (max-width: 480px) {
   .hero {
-    background: url('Images/PhoneBckg.png') no-repeat center center / cover;
+    background: url('Images/PhoneBckg.webp') no-repeat center center / cover;
     background-attachment: scroll;
     padding-top: 120px;
   }
@@ -1001,7 +922,7 @@ body.portfolio-page header {
 
 @media (max-width: 480px) {
   .starry-intro {
-    background: url('Images/StarrybkgPhone.png') no-repeat center center / cover;
+    background: url('Images/StarrybkgPhone.webp') no-repeat center center / cover;
     background-attachment: scroll;
   }
 }
@@ -1009,7 +930,7 @@ body.portfolio-page header {
 /* TABLETS: 481px - 1024px */
 @media (min-width: 481px) and (max-width: 1300px) {
   .hero {
-    background: url('Images/TabletBckg.png') no-repeat center center / cover;
+    background: url('Images/TabletBckg.webp') no-repeat center center / cover;
     background-color: black;
     background-attachment: scroll;
     padding-top: 140px;
@@ -1025,7 +946,7 @@ body.portfolio-page header {
 }
 @media (min-width: 481px) and (max-width: 1300px) {
   .starry-intro {
-    background: url('Images/StarryBckgTablet.png') no-repeat center center / cover;
+    background: url('Images/StarryBckgTablet.webp') no-repeat center center / cover;
     background-attachment: scroll;
   }
 }
@@ -1041,78 +962,8 @@ body {
   pointer-events: none;
 }
 
-#stickman {
-  position: absolute;
-  width: 80px;   /* adjust size */
-  height: 120px; /* adjust size */
-  background: url('Images/stick-idle.png') no-repeat center/contain;
-  top: 400px;  /* starting position */
-  left: 50px;
-  z-index: 1000;
-}
-/* .about-me {
-  position: relative;
-  padding: 80px 20px;
-  color: #fff;
-  text-align: center;
-  margin-top: 100px; /* adds spacing from projects */
- 
 
-.about-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* dark tint overlay */
-  z-index: 0;
-}
 
-.about-content {
-  position: relative;
-  z-index: 1; /* ensures text is above overlay */
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-  /* @keyframes floatRandom {
-    0%   { transform: translate(0, 0); }
-    25%  { transform: translate(100px, -50px); }
-    50%  { transform: translate(-150px, 70px); }
-    75%  { transform: translate(80px, 90px); }
-    100% { transform: translate(0, 0); }
-  } */
-  /* @keyframes floatBounce {
-    0% {
-      transform: translateY(100%) scale(1);
-      left: 10%;
-    }
-    25% {
-      transform: translateY(0%) scale(1.2);
-      left: 60%;
-    }
-    50% {
-      transform: translateY(100%) scale(1);
-      left: 30%;
-    }
-    75% {
-      transform: translateY(0%) scale(1.3);
-      left: 80%;
-    }
-    100% {
-      transform: translateY(100%) scale(1);
-      left: 15%;
-    }
-  } */
-  
-  /* .skills-bubble-area .skill-bubble:nth-child(2) { animation-delay: 1s; }
-  .skills-bubble-area .skill-bubble:nth-child(3) { animation-delay: 2s; }
-  .skills-bubble-area .skill-bubble:nth-child(4) { animation-delay: 3s; }
-  .skills-bubble-area .skill-bubble:nth-child(5) { animation-delay: 4s; }
-  .skills-bubble-area .skill-bubble:nth-child(6) { animation-delay: 5s; }
-  .skills-bubble-area .skill-bubble:nth-child(7) { animation-delay: 6s; }
-  .skills-bubble-area .skill-bubble:nth-child(8) { animation-delay: 7s; }
-  .skills-bubble-area .skill-bubble:nth-child(9) { animation-delay: 8s; }
-  .skills-bubble-area .skill-bubble:nth-child(10) { animation-delay: 9s; } */
-
-  
   
     
 
