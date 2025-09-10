@@ -534,14 +534,14 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
   /* ---------------------------- */
   /*     FLOATING SUN BOTTOM     */
   /* ---------------------------- */
-  .bottom-section {
+  /* .bottom-section {
     display: none;
     /* background: black;
     height: 0px;
     position: absolute;
     bottom: 0;
     width: 100%; */
-  }
+  } */
   
   .bottom-sun {
     position: absolute;
@@ -830,7 +830,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     font-weight: bold;
     cursor: pointer;
   }
-  
+/*   
   .contact-section .btn:hover {
     background-color: #FF9900;
   }
@@ -876,7 +876,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     50% {
       transform: translateY(-20px);
     }
-  }
+  } */
   
 /* Default: hide menu toggle on desktop */
 .menu-toggle {
