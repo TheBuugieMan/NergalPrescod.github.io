@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nergal's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Images/FaviconBlackandRed.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+ <link rel="icon" href="Images/FaviconBlackandRed.png" type="image/png">
 
     <script type="application/ld+json">
 {
@@ -18,10 +23,6 @@
 </script>
 
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE2YXDH9N8"></script>
 <script>
@@ -33,143 +34,212 @@
 </script>
 
 </head>
-<body>
 
-   <!-- ==================== HEADER ==================== -->
-    <header>
-        <div class="container">
-            <h1 class="logo">Nergal's Portfolio</h1>
-            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="portfolio.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- Main body with 'portfolio-page' class to limit certain effects to this page -->
+<body class="portfolio-page">
 
-    <!-- ==================== HERO SECTION ==================== -->
+  <!--Draws the swirld as mouse pointer-->
+<canvas id="cursorCanvas"></canvas>
+
+<div id="stickman"></div>
+
+  <!-- ✨ Twinkling Stars Container -->
+
+  <!-- 🔝 Header Navigation -->
+  <header>
+   
+    <div class="container">
+      <h1 class="logo">Nergal's Portfolio</h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#photoshop">Photoshop</a></li>
+          <li><a href="#indesign">InDesign</a></li>
+          <li><a href="#illustrator">Illustrator</a></li>
+          <li><a href="#after-effects">After Effects</a></li>
+          <!-- <li><a href="#software-engineering">Software Engineering</a></li> -->
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 📄 Main Content -->
+  <main>
+    <!-- 👋 Hero Section -->
     <section class="hero">
-        <div id="js-stars"></div>
-        <div class="hero-content">
-            <h2>Welcome to Nergal's Portfolio</h2>
-            <p>Explore my journey in design and development.</p>
-            <a href="portfolio.html" class="btn">View My Work</a>
-        </div>
+      <div id="js-stars"></div>
+
+      <h2>Welcome to My Portfolio</h2>
+      <p>Explore my creative and technical projects below.</p>
     </section>
 
-    <section class="starry-intro">
-        <div class="star-container"></div>
+    <!-- 🖼️ Photoshop Projects -->
+    <section id="photoshop" class="portfolio-gallery">
+      <h2>Photoshop Projects</h2>
+      <figure>
+        <img src="Images/MMA100Fall24Proj2_NergalPrescodREVISED.png" alt="The Hero's Journey" />
+        <figcaption>The Hero's Journey</figcaption>
+      </figure>
+      <figure>
+        <img src="Images/creation2.jpg" alt="Who started the fire?" />
+        <figcaption>Who started the fire?</figcaption>
+      </figure>
+      <figure>
+        <img src="Images/creation3.jpeg" alt="Dive" />
+        <figcaption>Dive</figcaption>
+      </figure>
+    </section>
 
-        <div class="center-box" style="position: relative;">
-            <canvas id="constellation-canvas"></canvas>
-            <div id="floating-symbols"></div>
-         <h2 class="multimedia-developer">Multimedia Developer</h2>
-         <p class="subtitle">Creating Experiences at the Intersection of Art & Code</p>
-         <div id="orbiting-orbs"></div>
+    <!-- 📰 InDesign Projects -->
+    <section id="indesign" class="portfolio-gallery">
+      <h2>InDesign Projects</h2>
+      <figure>
+        <img src="Images/Mag-Cover.png" alt="Magazine Cover" />
+        <figcaption>Magazine Cover</figcaption>
+      </figure>
+      <figure>
+        <img src="Images/Mag-Inside.png" alt="Magazine Inside" />
+        <figcaption>Magazine Inside</figcaption>
+      </figure>
+    </section>
+
+    <!-- ✒️ Illustrator Projects -->
+    <section id="illustrator" class="portfolio-gallery">
+      <h2>Illustrator Projects</h2>
+      <figure>
+        <img src="Images/SUNVOIDMOON.png" alt="Mystic" />
+        <figcaption>The birth of shadows</figcaption>
+      </figure>
+    </section>
+
+    <!-- 🎞️ After Effects -->
+    <section id="after-effects" class="portfolio-gallery">
+      <h2>After Effects Projects</h2>
+      <figure>
+        <video autoplay loop muted playsinline>
+          <source src="Images/MMP Projexcttest 3.mp4" type="video/mp4" />
+          
+        </video>
+        <figcaption>2D sees 3D for the first time</figcaption>
+      </figure>
+    </section>
+
+    <!-- 🎞️ Figma -->
+     
+    <!-- 🔍 Lightbox for Clicked Projects -->
+    <div class="lightbox" id="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="Project Preview" />
     </div>
-      </section>
-      
-    <!-- ==================== ABOUT SECTION ==================== -->
-    <!-- <section class="about-section">
-        <!-- Left About Box -->
+  </main>
 
-        <!-- Center Sun Animation & Title -->
-        <!-- <div class="center-box">
-           
+<!-- ======== ABOUT ME SECTION ======== -->
+<section class="about-me" id="about">
+  <div class="about-heading">
+    <h2 class="about-title">About Me</h2>
+    <p class="about-subtitle">
+      Multimedia Developer with a Strong Technical Foundation
+    </p>
+  </div>
 
-            <!-- Sunrise & Sunset Canvas Animation -->
-            <!-- <div class="sunset-animation">
-                <div class="sky">
-                    <div class="sun"></div>
-                </div>
-                <div class="ground"></div>
-            </div>
-        </div>
+  <div class="about-description">
+    <p>
+      I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering. 
+      With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions. 
+    </p>
+    <p>
+      My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript. 
+      Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
+    </p>
+  </div>
 
-    </section> --> 
+  <div class="about-cards">
+    <div class="fact-box">
+      <h3>About Me</h3>
+      <ul>
+        <li>Love video games and music</li>
+        <li>Learning Spanish on Duolingo</li>
+        <li>Exploring AI and Robotics</li>
+      </ul>
+    </div>
 
-    <!-- ==================== BOTTOM ANIMATED SUN SECTION ==================== -->
+    <div class="fact-box">
+      <h3>More About Me</h3>
+      <ul>
+        <li>Skilled in UX/UI and development</li>
+        <li>Backend software experience</li>
+        <li>Creative, curious, and always improving</li>
+      </ul>
+    </div>
+
+    <div class="skills-columns">
+      <div class="skills-column">
+        <span class="skill-bubble">HTML</span>
+        <span class="skill-bubble">CSS</span>
+        <span class="skill-bubble">JavaScript</span>
+        <span class="skill-bubble">SQL</span>
+        <span class="skill-bubble">C#</span>
+      </div>
+      <div class="skills-column">
+        <span class="skill-bubble">Python</span>
+        <span class="skill-bubble">After Effects</span>
+        <span class="skill-bubble">Photoshop</span>
+        <span class="skill-bubble">Illustrator</span>
+        <span class="skill-bubble">InDesign</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ☁️ Cloud Animation Overlay -->
+  <div id="cloud-transition"></div>
+
+  <!-- 🔊 Cloud Sound Effect -->
+  <audio id="cloud-sound" src="sounds/cloud-whoosh.mp3.wav" preload="auto"></audio>
+
+  <!-- ==================== BOTTOM ANIMATED SUN SECTION ==================== -->
     <div class="bottom-section">
         <div class="bottom-sun"></div>
     </div>
 
-    <!-- Cloud Transition Overlay -->
-<div id="cloud-transition">
-    <!-- <img src="Images/cloud-right.png" class="cloud cloud-right" /> -->
-  </div>  
+  <!-- ==================== FOOTER ==================== -->
+<div class="sun-footer-wrapper">
+    <div class="sun-glow"></div>
+    <footer>
+        <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
+    </footer>
+</div>
 
-  <section class="about-me">
-    <div class="about-heading">
-      <h2 class="about-title">About Me</h2>
-      <p class="about-subtitle">
-        Multimedia Developer with a Strong Technical Foundation
-      </p>
-    </div>
-  
-    <div class="about-description">
-      <p>
-        I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering. 
-        With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions. 
-      </p>
-      <p>
-        My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript. 
-        Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
-      </p>
-    </div>
-  
-    <div class="about-cards">
-      <div class="fact-box">
-        <h3>About Me</h3>
-        <ul>
-          <li>Love video games and music</li>
-          <li>Learning Spanish on Duolingo</li>
-          <li>Exploring AI and Robotics</li>
-        </ul>
-      </div>
-  
-      <div class="fact-box">
-        <h3>More About Me</h3>
-        <ul>
-          <li>Skilled in UX/UI and development</li>
-          <li>Backend software experience</li>
-          <li>Creative, curious, and always improving</li>
-        </ul>
-      </div>
-
-      <div class="skills-columns">
-        <div class="skills-column">
-          <span class="skill-bubble">HTML</span>
-          <span class="skill-bubble">CSS</span>
-          <span class="skill-bubble">JavaScript</span>
-          <span class="skill-bubble">SQL</span>
-          <span class="skill-bubble">C#</span>
-        </div>
-        <div class="skills-column">
-          <span class="skill-bubble">Python</span>
-          <span class="skill-bubble">After Effects</span>
-          <span class="skill-bubble">Photoshop</span>
-          <span class="skill-bubble">Illustrator</span>
-          <span class="skill-bubble">InDesign</span>
-        </div>
-      </div>
-            
-    </div>
-  </section>
-
+  <!-- 💫 JS: Star Twinkle Animation -->
+  <script>
+    function createStarField() {
+      const starsContainer = document.getElementById("js-stars");
+      if (!starsContainer) return;
+    
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${2 + Math.random() * 3}s`;
+        starsContainer.appendChild(star);
+      }
+    }
+    
+    window.addEventListener("DOMContentLoaded", createStarField);
+    </script>
+    
+  <!-- ☁️ Cloud Transition Script -->
   <script>
     function triggerCloudTransition(cloudCount = 200, callback = null) {
       const container = document.getElementById('cloud-transition');
       container.innerHTML = '<div class="cloud-fade-bg"></div>';
       container.style.display = 'block';
       container.style.opacity = '1';
-      
-      // Play whoosh sound
       document.getElementById('cloud-sound').play().catch(() => {});
-
-    
       for (let i = 0; i < cloudCount; i++) {
         const cloud = document.createElement('img');
         cloud.src = 'Images/cloud-1.png';
@@ -178,11 +248,8 @@
         cloud.style.animationDelay = `${Math.random() * 5}s`;
         container.appendChild(cloud);
       }
-    
-      // Fade out after animation ends
       setTimeout(() => {
         container.style.opacity = '0';
-    
         setTimeout(() => {
           container.style.display = 'none';
           container.style.opacity = '1';
@@ -190,15 +257,13 @@
         }, 1000);
       }, 5000);
     }
-    
-    // Show cloud transition on page load
+
+    // Run cloud on page load
     window.onload = () => {
-      setTimeout(() => {
-        triggerCloudTransition();
-      }, 300);
+      setTimeout(() => triggerCloudTransition(), 300);
     };
-    
-    // Handle link clicks with cloud animation
+
+    // Animate cloud transition on internal links
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
@@ -212,173 +277,48 @@
         }
       });
     });
-    </script>
-<script>
-    // Trigger it 1 second after the page loads
-    window.onload = () => {
-      setTimeout(() => {
-        triggerCloudTransition();
-      }, 1000);
-    };
   </script>
 
-<script>
-    const starContainer = document.getElementById('js-stars');
-  
-    for (let i = 0; i < 100; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-  
-      // Random positions and animation duration/delay
-      star.style.top = `${Math.random() * 100}%`;
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.animationDuration = `${Math.random() * 2 + 2}s`;
-      star.style.animationDelay = `${Math.random() * 3}s`;
-  
-      starContainer.appendChild(star);
-    }
-  </script>
-
-<script>
-    const symbolContainer = document.getElementById('floating-symbols');
-    const symbols = ['★', '☀', '✦', '✧', '⛧', '☾'];
-  
-    for (let i = 0; i < 30; i++) {
-      const sym = document.createElement('span');
-      sym.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-      sym.style.position = 'absolute';
-      sym.style.left = `${Math.random() * 100}%`;
-      sym.style.bottom = '-20px';
-      sym.style.fontSize = `${Math.random() * 10 + 12}px`;
-      sym.style.opacity = Math.random().toFixed(2);
-      sym.style.animation = `floatUp ${Math.random() * 5 + 5}s linear infinite`;
-      symbolContainer.appendChild(sym);
-    }
-  </script>
-
+  <!-- 🖼️ Lightbox Functionality -->
   <script>
-  const orbContainer = document.getElementById('orbiting-orbs');
-
-  for (let i = 0; i < 3; i++) {
-    const orb = document.createElement('div');
-    orb.className = 'orb';
-    orb.style.animationDuration = `${8 + i * 2}s`;
-    orbContainer.appendChild(orb);
-  }
-</script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
   
-<script>
-    const canvas = document.getElementById('constellation-canvas');
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    const stars = [];
-  
-    function resizeCanvas() {
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    }
-  
-    function createStars(count) {
-      for (let i = 0; i < count; i++) {
-        stars.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.2,
-          vy: (Math.random() - 0.5) * 0.2
-        });
-      }
-    }
-  
-    function draw() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = 'white';
-      stars.forEach(star => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, 1.5, 0, 2 * Math.PI);
-        ctx.fill();
+    // Show lightbox on click
+    document.querySelectorAll('.portfolio-gallery img, .portfolio-gallery video').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.src;
+        lightbox.style.display = 'flex';
       });
-  
-      // Connect stars with lines
-      for (let i = 0; i < stars.length; i++) {
-        for (let j = i + 1; j < stars.length; j++) {
-          const dx = stars[i].x - stars[j].x;
-          const dy = stars[i].y - stars[j].y;
-          const dist = dx * dx + dy * dy;
-          if (dist < 5000) {
-            ctx.beginPath();
-            ctx.moveTo(stars[i].x, stars[i].y);
-            ctx.lineTo(stars[j].x, stars[j].y);
-            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-            ctx.stroke();
-          }
-        }
-      }
-    }
-  
-    function update() {
-      stars.forEach(star => {
-        star.x += star.vx;
-        star.y += star.vy;
-  
-        if (star.x < 0 || star.x > width) star.vx *= -1;
-        if (star.y < 0 || star.y > height) star.vy *= -1;
-      });
-    }
-  
-    function animate() {
-      draw();
-      update();
-      requestAnimationFrame(animate);
-    }
-  
-    resizeCanvas();
-    createStars(60);
-    animate();
-    window.addEventListener('resize', resizeCanvas);
-  </script>
-  
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header');
-  const hero = document.querySelector('.hero');
-  if (header && hero) {
-    const headerHeight = header.offsetHeight;
-    hero.style.paddingTop = `${headerHeight}px`;
-  }
-});
-  </script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const bubbles = document.querySelectorAll(".skill-bubble");
-    const container = document.querySelector(".skills-floating-area");
-
-    if (!container) return;
-
-    const areaWidth = container.offsetWidth;
-    const areaHeight = container.offsetHeight;
-
-    bubbles.forEach((bubble, i) => {
-      const randX = Math.random() * (areaWidth - 100);
-      const randY = Math.random() * (areaHeight - 40);
-      
-      bubble.style.left = `${randX}px`;
-      bubble.style.top = `${randY}px`;
-      bubble.style.animationDuration = `${20 + Math.random() * 10}s`;
-      bubble.style.animationDelay = `${Math.random() * 10}s`;
     });
-  });
-</script>
+  
+    // Close lightbox when clicking outside the image or the image itself
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox || event.target === lightboxImg) {
+        lightbox.style.display = 'none';
+      }
+    });
+  
+    // Close button (optional, already present)
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+  </script>
 
-  <audio id="cloud-sound" src="sounds/cloud-whoosh.mp3.wav" preload="auto"></audio>
+  <!-- 👁️‍🗨️ Intersection Observer for Animation on Scroll -->
+  <script>
+    const figures = document.querySelectorAll(".portfolio-gallery figure");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
 
-<!-- ==================== FOOTER ==================== -->
-<div class="sun-footer-wrapper">
-    <div class="sun-glow"></div>
-    <footer>
-        <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
-    </footer>
-</div>
+    figures.forEach(fig => observer.observe(fig));
+  </script>
+
 <script>
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -403,6 +343,104 @@
     }
   });
 </script>
+
+<script>
+const canvas = document.getElementById('cursorCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+document.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw chaotic scribbles
+  for (let i = 0; i < 8; i++) {
+    let offsetX = Math.random() * 40 - 20;
+    let offsetY = Math.random() * 40 - 20;
+    let endX = mouse.x + Math.random() * 40 - 20;
+    let endY = mouse.y + Math.random() * 40 - 20;
+
+    ctx.beginPath();
+    ctx.moveTo(mouse.x + offsetX, mouse.y + offsetY);
+    ctx.lineTo(endX, endY);
+    ctx.strokeStyle = `rgba(255, 0, 0, ${Math.random() * 0.6 + 0.3})`;
+    ctx.shadowColor = '#ff0000';
+    ctx.shadowBlur = 10;
+    ctx.lineWidth = 1 + Math.random() * 1;
+    ctx.stroke();
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+<script>
+const stickman = document.getElementById("stickman");
+
+let x = 50;
+let y = 400;
+let frame = 0;
+let action = "idle"; // idle, run, climb
+
+// Preload frames
+const frames = {
+  idle: ["Images/stick-idle.png"],
+  run: ["Images/stick-run1.png", "Images/stick-run2.png"],
+  climb: ["Images/stick-climb.png"]
+};
+
+// Animate loop
+setInterval(() => {
+  let currentFrames = frames[action];
+  stickman.style.backgroundImage = `url(${currentFrames[frame % currentFrames.length]})`;
+  frame++;
+}, 200); // change frame every 200ms
+
+// Example movement
+function runRight() {
+  action = "run";
+  let move = setInterval(() => {
+    x += 5;
+    stickman.style.left = x + "px";
+    if (x > window.innerWidth - 100) {
+      clearInterval(move);
+      action = "idle";
+    }
+  }, 50);
+}
+
+function climbUp() {
+  action = "climb";
+  let move = setInterval(() => {
+    y -= 3;
+    stickman.style.top = y + "px";
+    if (y < 200) {
+      clearInterval(move);
+      action = "idle";
+    }
+  }, 50);
+}
+
+// Demo: run after 1s, climb after 5s
+setTimeout(runRight, 1000);
+setTimeout(climbUp, 5000);
+</script>
+
+
+
 
 </body>
 </html>

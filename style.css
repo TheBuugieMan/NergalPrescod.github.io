@@ -21,7 +21,36 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
+  @font-face {
+    font-family: 'MyCustomFont4';
+    src: url('Fonts/Jacquard12-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont5';
+    src: url('Fonts/Bytesized-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont6';
+    src: url('Fonts/Tiny5-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont7';
+    src: url('Fonts/HanaleiFill-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
   /* ---------------------------- */
   /*       GLOBAL STYLES         */
   /* ---------------------------- */
@@ -55,7 +84,8 @@
   }
   
   body, p, .about-box, .nav-links, .btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'MyCustomFont3', sans-serif;
+    color: #FFD700;
   }
   
   /* ---------------------------- */
@@ -83,7 +113,7 @@
   }
   
   .logo {
-    font-family: 'MyCustomFont3', sans-serif;
+    font-family: 'MyCustomFont7', sans-serif;
     font-size: 1.8rem;
     color: #FFD700;
     text-shadow: 1px 1px 2px black;
@@ -91,6 +121,7 @@
   
   .nav-links {
     display: flex;
+    font-size: .8rem;
     list-style: none;
   }
   
@@ -100,7 +131,13 @@
   
   .nav-links li a {
     text-decoration: none;
-    color: #ffea02;
+    color: #FFD700; /* Cyan */
+    text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+    
+    /*color: #ffea02; */
     padding: 5px 10px;
     border-radius: 5px;
     transition: background 0.3s ease, color 0.3s ease;
@@ -193,10 +230,19 @@
   @keyframes twinkle {
     0%, 100% { opacity: 0.2; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.5); }
+
+
   }  .hero h2 {
-    font-family: 'Rubik Moonrocks', cursive;
-    font-size: 2.5rem;
+    font-family: 'MyCustomFont7', sans-serif;
+    text-shadow: 2px 2px 5px #ffffff, 0 0 20px #f20000, 0 0 40px #ff4500;
+    /*font-family: 'Rubik Moonrocks', cursive;*/
+    font-size: 6.5rem;
     margin-bottom: 20px;
+  }
+
+  .hero p {
+  font-family: 'MyCustomFont5', sans-serif;
+
   }
 
   /* ---------- PORTFOLIO-ONLY STYLING ---------- */
@@ -757,6 +803,8 @@ body.portfolio-page header {
   }
 
   .about-me {
+    position: relative;
+    margin-top: 2300px;
     background: url("Images/AboutmeBackground.png") no-repeat center center/cover;
     padding: 80px 20px;
     text-align: center;
@@ -982,6 +1030,49 @@ body.portfolio-page header {
     background-attachment: scroll;
   }
 }
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+#cursorCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#stickman {
+  position: absolute;
+  width: 80px;   /* adjust size */
+  height: 120px; /* adjust size */
+  background: url('Images/stick-idle.png') no-repeat center/contain;
+  top: 400px;  /* starting position */
+  left: 50px;
+  z-index: 1000;
+}
+/* .about-me {
+  position: relative;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 100px; /* adds spacing from projects */
+ 
+
+.about-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark tint overlay */
+  z-index: 0;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1; /* ensures text is above overlay */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
   /* @keyframes floatRandom {
     0%   { transform: translate(0, 0); }
     25%  { transform: translate(100px, -50px); }
