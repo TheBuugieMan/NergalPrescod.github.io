@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>Nergal's Portfolio</title>
 
   <!-- Link to External CSS -->
   <link rel="stylesheet" href="style.css"/>
@@ -219,7 +219,7 @@
       const starsContainer = document.getElementById("js-stars");
       if (!starsContainer) return;
     
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 125; i++) {
         const star = document.createElement("div");
         star.classList.add("star");
         star.style.top = `${Math.random() * 100}%`;
@@ -234,7 +234,7 @@
     
   <!-- ☁️ Cloud Transition Script -->
   <script>
-    function triggerCloudTransition(cloudCount = 200, callback = null) {
+    function triggerCloudTransition(cloudCount = 50, callback = null) {
       const container = document.getElementById('cloud-transition');
       container.innerHTML = '<div class="cloud-fade-bg"></div>';
       container.style.display = 'block';
@@ -259,9 +259,9 @@
     }
 
     // Run cloud on page load
-    window.onload = () => {
-      setTimeout(() => triggerCloudTransition(), 300);
-    };
+    // window.onload = () => {
+    //   setTimeout(() => triggerCloudTransition(), 300);
+    // };
 
     // Animate cloud transition on internal links
     document.addEventListener('DOMContentLoaded', () => {
@@ -365,7 +365,7 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Draw chaotic scribbles
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 5; i++) {
     let offsetX = Math.random() * 40 - 20;
     let offsetY = Math.random() * 40 - 20;
     let endX = mouse.x + Math.random() * 40 - 20;
@@ -387,7 +387,7 @@ function draw() {
 draw();
 </script>
 
-<script>
+<!-- <script>
 const stickman = document.getElementById("stickman");
 
 let x = 50;
@@ -437,7 +437,7 @@ function climbUp() {
 // Demo: run after 1s, climb after 5s
 setTimeout(runRight, 1000);
 setTimeout(climbUp, 5000);
-</script>
+</script> -->
 
 
 

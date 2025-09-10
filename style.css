@@ -1,20 +1,13 @@
 /* ---------------------------- */
 /*        FONT FACES           */
 /* ---------------------------- */
-@font-face {
-    font-family: 'MyCustomFont';
-    src: url('Fonts/RubikBeastly-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
+  /* @font-face {
     font-family: 'MyCustomFont2';
     src: url('Fonts/RubikWetPaint-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
   }
-  
+   */
   @font-face {
     font-family: 'MyCustomFont3';
     src: url('Fonts/RubikPixels-Regular.woff2') format('woff2');
@@ -32,13 +25,6 @@
   @font-face {
     font-family: 'MyCustomFont5';
     src: url('Fonts/Bytesized-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'MyCustomFont6';
-    src: url('Fonts/Tiny5-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
   }
@@ -83,9 +69,11 @@
     font-family: 'RubikBeastly', sans-serif;
   }
   
-  body, p, .about-box, .nav-links, .btn {
+  body,p, .about-box, .nav-links, .btn {
     font-family: 'MyCustomFont3', sans-serif;
-    color: #FFD700;
+    font-size: 18px;   /* increase base size */
+    line-height: 1.6;  /* keeps it readable */
+    
   }
   
   /* ---------------------------- */
@@ -268,6 +256,12 @@ body.portfolio-page .portfolio-gallery figure {
   z-index: 2;
 }
 
+body.portfolio-gallery h2
+{
+font-family: 'MyCustomFont4', san sans-serif;
+
+}
+
 body.portfolio-page {
   background: url("Images/HomeBackground.png") no-repeat center center / cover;
   background-attachment: fixed;
@@ -278,7 +272,10 @@ body.portfolio-page header {
   backdrop-filter: blur(4px);
   z-index: 10;
 }
-  
+
+  .portfolio-gallery {
+  margin-bottom: 150px; /* or clamp(80px, 10vh, 200px) for responsiveness */
+}
 /* Portfolio styling section ends */
 
   .hero p {
@@ -571,7 +568,7 @@ body.portfolio-page header {
   /* ---------------------------- */
   .multimedia-developer {
     text-align: center;
-    font-family: 'MyCustomFont2', sans-serif;
+    font-family: 'MyCustomFont4', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
     color: #ff0000;
@@ -744,7 +741,8 @@ body.portfolio-page header {
     }
   
     .about-section p {
-      font-size: 1rem;
+      color: white;
+      font-size: 1.2rem;
     }
   }
   
@@ -804,8 +802,8 @@ body.portfolio-page header {
 
   .about-me {
     position: relative;
-    margin-top: 2300px;
-    background: url("Images/AboutmeBackground.png") no-repeat center center/cover;
+    margin-top: 2500px;
+    /* background: url("Images/AboutmeBackground.png") no-repeat center center/cover; */
     padding: 80px 20px;
     text-align: center;
     color: #fff;
@@ -816,13 +814,13 @@ body.portfolio-page header {
   }
   
   .about-title {
-    font-size: 3rem;
+    font-size: 5rem;
     color: #ff2e2e;
-    font-family: 'MyCustomFont2', sans-serif;
+    font-family: 'MyCustomFont4', sans-serif;
   }
   
   .about-subtitle {
-    color: #f2ff78;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.2rem;
   }
@@ -831,6 +829,7 @@ body.portfolio-page header {
     max-width: 800px;
     margin: 0 auto 50px;
     line-height: 1.8;
+    color: white;
     font-size: 1.05rem;
   }
   
