@@ -5,219 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nergal's Portfolio</title>
 
-  <!-- Link to External CSS -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="Images/FaviconBlackandRed.webp" type="image/webp">
 
-  <!-- Google Fonts -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/> -->
- <link rel="icon" href="Images/FaviconBlackandRed.webp" type="image/webp">
+  <!-- SEO Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nergal Prescod",
+    "url": "https://nergalprescod.com",
+    "logo": "https://nergalprescod.com/Images/FaviconBlackandRed.webp"
+  }
+  </script>
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Nergal Prescod",
-  "url": "https://nergalprescod.com",
-  "logo": "https://nergalprescod.com/Images/FaviconBlackandRed.webp"
-}
-</script>
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EE2YXDH9N8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EE2YXDH9N8');
-</script>
-
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE2YXDH9N8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EE2YXDH9N8');
+  </script>
 </head>
 
-<!-- Main body with 'portfolio-page' class to limit certain effects to this page -->
 <body class="portfolio-page">
+  <!-- custom cursor canvas -->
+  <canvas id="cursorCanvas"></canvas>
 
-  <!--Draws the swirld as mouse pointer-->
-<canvas id="cursorCanvas"></canvas>
-
-
-  <!-- ✨ Twinkling Stars Container -->
-
-  <!-- 🔝 Header Navigation -->
+  <!-- Header / Nav -->
   <header>
-   
     <div class="container">
-      <h1 class="logo">Nergal's Portfolio</h1>
+      <h1 class="logo">
+        <a href="index.html" class="logo-link">Nergal's Portfolio</a>
+      </h1>
+
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <nav>
         <ul class="nav-links">
-          <!-- <li><a href="#about">About</a></li> -->
           <li><a href="#photoshop">Photoshop</a></li>
           <li><a href="#indesign">InDesign</a></li>
           <li><a href="#illustrator">Illustrator</a></li>
-          <!-- <li><a href="#after-effects">After Effects</a></li> -->
-          <!-- <li><a href="#software-engineering">Software Engineering</a></li> -->
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- 📄 Main Content -->
   <main>
-    <!-- 👋 Hero Section -->
+    <!-- Hero -->
     <section class="hero">
       <div id="js-stars"></div>
-
       <h2>Welcome to My Portfolio</h2>
       <p>Explore my creative and technical projects below.</p>
     </section>
 
-   <!-- 🖼️ Photoshop Projects -->
-<section id="photoshop" class="portfolio-gallery">
-  <h2>Photoshop Projects</h2>
-  <figure>
-    <img src="Images/MMA100Fall24Proj2_NergalPrescodREVISED.webp" alt="The Hero's Journey" loading="lazy" />
-    <figcaption>The Hero's Journey</figcaption>
-  </figure>
-  <figure>
-    <img src="Images/creation2.webp" alt="Who started the fire?" loading="lazy" />
-    <figcaption>Who started the fire?</figcaption>
-  </figure>
-  <figure>
-    <img src="Images/creation3.webp" alt="Dive" loading="lazy" />
-    <figcaption>Dive</figcaption>
-  </figure>
-</section>
+    <!-- Photoshop -->
+    <section id="photoshop" class="portfolio-gallery">
+      <h2>Photoshop Projects</h2>
 
-<!-- 📰 InDesign Projects -->
-<section id="indesign" class="portfolio-gallery">
-  <h2>InDesign Projects</h2>
-  <figure>
-    <img src="Images/Mag-Cover.png" alt="Magazine Cover" loading="lazy" />
-    <figcaption>Magazine Cover</figcaption>
-  </figure>
-  <figure>
-    <img src="Images/Mag-Inside.png" alt="Magazine Inside" loading="lazy" />
-    <figcaption>Magazine Inside</figcaption>
-  </figure>
-</section>
+      <figure
+        data-title="The Hero's Journey"
+        data-description="I created this piece for my MMA 100 project called 'Transported,' where we had to teleport ourselves into a fantasy world. The bull, bird, and snake each represent parts of me at that moment — the bull for groundedness and stability, the bird for freedom and seeing the bigger picture, and the snake for wisdom and instincts. I designed it to be open to interpretation so each viewer can find their own meaning. This piece would translate beautifully into a book cover, film poster, or limited-edition print — a striking centerpiece for anyone drawn to myth, symbolism, and transformation.">
+        <img src="Images/MMA100Fall24Proj2_NergalPrescodREVISED.webp" alt="The Hero's Journey" loading="lazy">
+        <figcaption>The Hero's Journey</figcaption>
+      </figure>
 
-<!-- ✒️ Illustrator Projects -->
-<section id="illustrator" class="portfolio-gallery">
-  <h2>Illustrator Projects</h2>
-  <figure>
-    <img src="Images/SUNVOIDMOON.webp" alt="Mystic" loading="lazy" />
-    <figcaption>The birth of shadows</figcaption>
-  </figure>
-</section>
+      <figure
+        data-title="Who started the fire?"
+        data-description="A fun project for my MMP 100 class at BMCC inspired by a 'blimp of chaos'—playing with the tension between destruction and calm. This would make a bold poster, album cover, or editorial spread.">
+        <img src="Images/creation2.webp" alt="Who started the fire?" loading="lazy" />
+        <figcaption>Who started the fire?</figcaption>
+      </figure>
 
-    <!-- 🎞️ After Effects
-    <section id="after-effects" class="portfolio-gallery">
-  <h2>After Effects Projects</h2>
-  <figure>
-    <video autoplay loop muted playsinline loading="lazy">
-      <source src="Images/MMP Projexcttest 3.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <figcaption>2D sees 3D for the first time</figcaption>
-  </figure>
-</section> -->
+      <figure
+        data-title="Saturn Welcomes You"
+        data-description="Surreal travel poster energy—cosmic invitation vibes. Strong as a poster/print or cover art.">
+        <img src="Images/Saturn-Welcomes you pt2.png" alt="Saturn Welcomes You" loading="lazy" />
+        <figcaption>Saturn Welcomes You</figcaption>
+      </figure>
 
-    <!-- 🎞️ Figma -->
-     
-    <!-- 🔍 Lightbox for Clicked Projects -->
+      <figure
+        data-title="Dive"
+        data-description="Motion, atmosphere, and wonder. Designed with negative space to work nicely as cover art.">
+        <img src="Images/creation3.webp" alt="Dive" loading="lazy" />
+        <figcaption>Dive</figcaption>
+      </figure>
+    </section>
+
+    <!-- InDesign -->
+    <section id="indesign" class="portfolio-gallery">
+      <h2>InDesign Projects</h2>
+      <figure data-title="Magazine Cover" data-description="Editorial cover concept exploring hierarchy and contrast.">
+        <img src="Images/Mag-Cover.png" alt="Magazine Cover" loading="lazy" />
+        <figcaption>Magazine Cover</figcaption>
+      </figure>
+      <figure data-title="Magazine Inside" data-description="Interior spread layout—grid, rhythm, and type pairing.">
+        <img src="Images/Mag-Inside.png" alt="Magazine Inside" loading="lazy" />
+        <figcaption>Magazine Inside</figcaption>
+      </figure>
+    </section>
+
+    <!-- Illustrator -->
+    <section id="illustrator" class="portfolio-gallery">
+      <h2>Illustrator Projects</h2>
+      <figure data-title="The birth of shadows" data-description="Stylized vector illustration—mythic and minimal.">
+        <img src="Images/SUNVOIDMOON.webp" alt="The birth of shadows" loading="lazy" />
+        <figcaption>The birth of shadows</figcaption>
+      </figure>
+    </section>
+
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-      <span class="close" onclick="closeLightbox()">&times;</span>
+      <span class="close" aria-label="Close" onclick="closeLightbox()">&times;</span>
       <img id="lightbox-img" src="" alt="Project Preview" />
+      <p id="lightbox-description" style="margin-top:10px; font-size:1rem; max-width:80%; text-align:center;"></p>
     </div>
   </main>
 
-<!-- ======== ABOUT ME SECTION ======== --> -->
-<!-- <section class="about-me" id="about">
-  <div class="about-heading">
-    <h2 class="about-title">About Me</h2>
-    <p class="about-subtitle">
-      Multimedia Developer with a Strong Technical Foundation
-    </p>
-  </div>
-
-  <div class="about-description">
-    <p>
-      I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering. 
-      With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions. 
-    </p>
-    <p>
-      My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript. 
-      Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
-    </p>
-  </div>
-
-  <div class="about-cards">
-    <div class="fact-box">
-      <h3>About Me</h3>
-      <ul>
-        <li>Love video games and music</li>
-        <li>Learning Spanish on Duolingo</li>
-        <li>Exploring AI and Robotics</li>
-      </ul>
-    </div>
-
-    <div class="fact-box">
-      <h3>More About Me</h3>
-      <ul>
-        <li>Skilled in UX/UI and development</li>
-        <li>Backend software experience</li>
-        <li>Creative, curious, and always improving</li>
-      </ul>
-    </div>
-
-    <div class="skills-columns">
-      <div class="skills-column">
-        <span class="skill-bubble">HTML</span>
-        <span class="skill-bubble">CSS</span>
-        <span class="skill-bubble">JavaScript</span>
-        <span class="skill-bubble">SQL</span>
-        <span class="skill-bubble">C#</span>
-      </div>
-      <div class="skills-column">
-        <span class="skill-bubble">Python</span>
-        <span class="skill-bubble">After Effects</span>
-        <span class="skill-bubble">Photoshop</span>
-        <span class="skill-bubble">Illustrator</span>
-        <span class="skill-bubble">InDesign</span>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Put the main that ends before the about me code here so that its in the same section automatically -->
-
-  <!-- ☁️ Cloud Animation Overlay -->
+  <!-- Cloud transition + audio -->
   <div id="cloud-transition"></div>
-
-  <!-- 🔊 Cloud Sound Effect -->
   <audio id="cloud-sound" src="sounds/cloud-whoosh.mp3.wav" preload="auto"></audio>
 
-  <!-- ==================== BOTTOM ANIMATED SUN SECTION ==================== -->
-    <!-- <div class="bottom-section">
-        <div class="bottom-sun"></div>
-    </div> -->
+  <!-- ========== SCRIPTS (single, cleaned) ========== -->
 
-  <!-- ==================== FOOTER ==================== -->
-<!-- <div class="sun-footer-wrapper">
-    <div class="sun-glow"></div>
-    <footer>
-        <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
-    </footer>
-</div> -->
-
-  <!-- 💫 JS: Star Twinkle Animation -->
+  <!-- Stars -->
   <script>
     function createStarField() {
       const starsContainer = document.getElementById("js-stars");
       if (!starsContainer) return;
-    
       for (let i = 0; i < 125; i++) {
         const star = document.createElement("div");
         star.classList.add("star");
@@ -227,11 +144,10 @@
         starsContainer.appendChild(star);
       }
     }
-    
     window.addEventListener("DOMContentLoaded", createStarField);
-    </script>
-    
-  <!-- ☁️ Cloud Transition Script -->
+  </script>
+
+  <!-- Cloud transition -->
   <script>
     function triggerCloudTransition(cloudCount = 50, callback = null) {
       const container = document.getElementById('cloud-transition');
@@ -257,7 +173,7 @@
       }, 5000);
     }
 
-    // Animate cloud transition on internal links
+    // Transition on external links (not anchors/mailto)
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
@@ -273,143 +189,156 @@
     });
   </script>
 
-  <!-- 🖼️ Lightbox Functionality -->
+  <!-- Lightbox (single instance) -->
   <script>
+    // Preload gallery images to avoid first-click lag
+    document.querySelectorAll('.portfolio-gallery img').forEach(img => {
+      const preload = new Image();
+      preload.src = img.src;
+    });
+
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-  
-    // Show lightbox on click
-    document.querySelectorAll('.portfolio-gallery img, .portfolio-gallery video').forEach(item => {
+    const lightboxDesc = document.getElementById('lightbox-description');
+
+    // Open
+    document.querySelectorAll('.portfolio-gallery img').forEach(item => {
       item.addEventListener('click', () => {
         lightboxImg.src = item.src;
+
+        const parentFigure = item.closest('figure');
+        if (parentFigure?.dataset.description) {
+          lightboxDesc.textContent = parentFigure.dataset.description;
+          lightboxDesc.style.display = 'block';
+        } else {
+          lightboxDesc.textContent = '';
+          lightboxDesc.style.display = 'none';
+        }
+
         lightbox.style.display = 'flex';
       });
     });
-  
-    // Close lightbox when clicking outside the image or the image itself
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox || event.target === lightboxImg) {
+
+    // Close on backdrop or image click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxImg) {
         lightbox.style.display = 'none';
       }
     });
-  
-    // Close button (optional, already present)
+
+    // Close button
     function closeLightbox() {
       lightbox.style.display = 'none';
     }
+
+    // Keyboard UX (ESC to close)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
   </script>
 
-  <!-- 👁️‍🗨️ Intersection Observer for Animation on Scroll -->
+  <!-- Reveal on scroll -->
   <script>
     const figures = document.querySelectorAll(".portfolio-gallery figure");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("visible");
       });
     }, { threshold: 0.2 });
-
     figures.forEach(fig => observer.observe(fig));
   </script>
 
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  <!-- Mobile menu -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-  // Toggle nav
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent it from closing immediately
-    navLinks.classList.toggle('active');
-  });
-
-  // Close menu when a nav link is clicked
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
     });
-  });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-      navLinks.classList.remove('active');
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+
+  <!-- Cursor effect (optimized) -->
+  <script>
+    const canvas = document.getElementById('cursorCanvas');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    let dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+
+    function resize() {
+      canvas.width  = Math.floor(window.innerWidth * dpr);
+      canvas.height = Math.floor(window.innerHeight * dpr);
+      canvas.style.width  = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
-  });
-</script>
+    resize();
+    window.addEventListener('resize', resize);
 
-<script>
-const canvas = document.getElementById('cursorCanvas');
-const ctx = canvas.getContext('2d', { alpha: true });
-let dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    let mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
+    let moving = false;
+    let lastMove = 0;
 
-function resize() {
-  canvas.width  = Math.floor(window.innerWidth * dpr);
-  canvas.height = Math.floor(window.innerHeight * dpr);
-  canvas.style.width  = window.innerWidth + "px";
-  canvas.style.height = window.innerHeight + "px";
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-}
-resize();
-window.addEventListener('resize', resize);
+    document.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      moving = true;
+      lastMove = performance.now();
+    });
 
-let mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
-let moving = false;
-let lastMove = 0;
+    let lastFrame = 0;
+    const FRAME_MS = 1000/30; // ~30fps
+    const LINES_PER_TICK = 3;
 
-document.addEventListener('mousemove', (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-  moving = true;
-  lastMove = performance.now();
-});
+    function drawTick(now) {
+      if (now - lastFrame < FRAME_MS) {
+        requestAnimationFrame(drawTick);
+        return;
+      }
+      lastFrame = now;
 
-let lastFrame = 0;
-const FRAME_MS = 1000/30; // ~30fps
-const LINES_PER_TICK = 3;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-function drawTick(now) {
-  if (now - lastFrame < FRAME_MS) {
+      if (!moving && (now - lastMove) > 1000) {
+        requestAnimationFrame(drawTick);
+        return;
+      }
+      moving = false;
+
+      for (let i = 0; i < LINES_PER_TICK; i++) {
+        const offsetX = (Math.random() * 40 - 20);
+        const offsetY = (Math.random() * 40 - 20);
+        const endX = mouse.x + (Math.random() * 40 - 20);
+        const endY = mouse.y + (Math.random() * 40 - 20);
+
+        ctx.beginPath();
+        ctx.moveTo(mouse.x + offsetX, mouse.y + offsetY);
+        ctx.lineTo(endX, endY);
+        ctx.lineWidth = 0.8 + Math.random() * 0.8;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = '#ff0000';
+        ctx.strokeStyle = `rgba(255,0,0,${0.3 + Math.random() * 0.3})`;
+        ctx.stroke();
+      }
+
+      requestAnimationFrame(drawTick);
+    }
     requestAnimationFrame(drawTick);
-    return;
-  }
-  lastFrame = now;
 
-  // Instead of black fade, just clear only what we drew
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  if (!moving && (now - lastMove) > 1000) {
-    requestAnimationFrame(drawTick);
-    return;
-  }
-  moving = false;
-
-  for (let i = 0; i < LINES_PER_TICK; i++) {
-    const offsetX = (Math.random() * 40 - 20);
-    const offsetY = (Math.random() * 40 - 20);
-    const endX = mouse.x + (Math.random() * 40 - 20);
-    const endY = mouse.y + (Math.random() * 40 - 20);
-
-    ctx.beginPath();
-    ctx.moveTo(mouse.x + offsetX, mouse.y + offsetY);
-    ctx.lineTo(endX, endY);
-    ctx.lineWidth = 0.8 + Math.random() * 0.8;
-    ctx.shadowBlur = 4;
-    ctx.shadowColor = '#ff0000';
-    ctx.strokeStyle = `rgba(255,0,0,${0.3 + Math.random() * 0.3})`;
-    ctx.stroke();
-  }
-
-  requestAnimationFrame(drawTick);
-}
-requestAnimationFrame(drawTick);
-
-// Disable effect for small screens
-if (window.matchMedia('(max-width: 600px)').matches) {
-  canvas.remove();
-}
-</script>
-
-
+    // Disable on small screens
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      canvas.remove();
+    }
+  </script>
 </body>
 </html>

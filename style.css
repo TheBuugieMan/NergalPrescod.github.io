@@ -66,7 +66,7 @@
   }
   
   h1, h2, h3, .hero h2, .dev-title {
-    font-family: 'RubikBeastly', sans-serif;
+    font-family: 'MyCustomFont7', sans-serif;
   }
   
   body,p, .about-box, .nav-links, .btn {
@@ -106,6 +106,16 @@
     color: #FFD700;
     text-shadow: 1px 1px 2px black;
   }
+
+  .logo-link {
+  text-decoration: none;
+  color: inherit; /* inherits the .logo color */
+}
+
+.logo-link:hover {
+  opacity: 0.85; /* subtle hover effect */
+}
+
   
   .nav-links {
     display: flex;
@@ -157,8 +167,8 @@
   /*         HERO SECTION        */
   /* ---------------------------- */
   .hero {
-    background: url('Images/backgroundone.png') no-repeat center center/cover;
-    color: #FF9900;
+    background: url('Images/TabletBckg.webp') no-repeat center center/cover;
+    color: #000000;
     padding: 140px 20px 80px; /* Push content down by header height */
     text-align: center;
     position: relative;
@@ -701,6 +711,16 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     font-size: 2rem;
     cursor: pointer;
   }
+
+  .lightbox p {
+  max-width: 80%;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1rem;
+  line-height: 1.6; 
+}
+
   
   /* ---------------------------- */
   /*     RESPONSIVE STYLING      */
