@@ -71,9 +71,10 @@
   
   body,p, .about-box, .nav-links, .btn {
     font-family: 'MyCustomFont3', sans-serif;
-    font-size: 18px;   /* increase base size */
     line-height: 1.6;  /* keeps it readable */
-    
+    font-weight: 600; /* Bold */
+    text-shadow: 0 0 6px rgba(0,0,0,0.8); /* Makes it pop on any background */
+   letter-spacing: 1px; 
   }
   
   /* ---------------------------- */
@@ -102,7 +103,7 @@
   
   .logo {
     font-family: 'MyCustomFont7', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #FFD700;
     text-shadow: 1px 1px 2px black;
   }
@@ -230,11 +231,12 @@
     50% { opacity: 1; transform: scale(1.5); }
 
 
-  }  .hero h2 {
+  } 
+   .hero h2 {
     font-family: 'MyCustomFont7', sans-serif;
     text-shadow: 2px 2px 5px #ffffff, 0 0 20px #f20000, 0 0 40px #ff4500;
     /*font-family: 'Rubik Moonrocks', cursive;*/
-    font-size: 6.5rem;
+    font-size: 6.5rem !important;
     margin-bottom: 20px;
   }
 
@@ -288,8 +290,9 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 /* Portfolio styling section ends */
 
   .hero p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'MyCustomFont3', sans-serif;
     font-size: 1.2rem;
+     font-weight: 700; /* Bold */
   }
 
   .hero h2, .hero p {
@@ -318,11 +321,11 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     z-index: 222;
   }
 
-  .hero-content h2 {
+  /* .hero-content h2 {
     font-size: 3rem;
     font-family: 'Rubik Moonrocks', sans-serif;
     text-shadow: 2px 2px 4px #000;
-  }
+  } */
   
   .hero-content a.btn {
     background: #FFD700;
@@ -947,6 +950,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
   }
 }
 
+
 /* TABLETS: 481px - 1024px */
 @media (min-width: 481px) and (max-width: 1300px) {
   .hero {
@@ -955,10 +959,10 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     background-attachment: scroll;
     padding-top: 140px;
   }
-
+/* 
   .hero h2 {
     font-size: 2.2rem;
-  }
+  } */
 
   .hero p {
     font-size: 1.2rem;
@@ -982,7 +986,97 @@ body {
   pointer-events: none;
 }
 
+ .about-me {
+      margin-top: 0; /* remove giant margin */
+  padding: 6rem 20px; /* plenty of internal spacing */
+  background: rgba(0, 0, 0, 0.6); /* optional to add contrast */
+  text-align: center;
+  color: #fff;
+  }
+  
+  .about-heading {
+    margin-bottom: 30px;
+  }
+  
+  .about-title {
+    font-size: 5rem;
+    color: #FFD700;
+    font-family: 'MyCustomFont7', sans-serif;
+  }
+  
+  .about-subtitle {
+    font-family: 'MyCustomFont7', sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.7rem;
+  }
+  
+  .about-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.8;
+    font-family: 'MyCustomFont7', sans-serif;
+    color: white;
+    font-size: 1.05rem;
+  }
+  
+  .about-container {
+  background: rgba(0, 0, 0, 0.7); /* slightly transparent */
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
 
+  
+  /* .about-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+   */
+  /* .fact-box {
+    background-color: #DAA520;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: black;
+    font-weight: bold;
+  }
+  
+  .fact-box ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .fact-box li {
+    margin-bottom: 10px;
+  } */
+  
+  /* Make Responsive */
+  /* @media (max-width: 768px) {
+    .about-title {
+      font-size: 2rem;
+    }
+  
+    .about-subtitle {
+      font-size: 1rem;
+    }
+  
+    .about-description {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+  
+    .about-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  } */
 
   
     

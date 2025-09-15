@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="Images/FaviconBlackandRed.png" type="image/png">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nergal Prescod",
+    "url": "https://nergalprescod.com",
+    "logo": "https://nergalprescod.com/Images/FaviconBlackandRed.png"
+  }
+  </script>
+
+</head>
+
+<body class="contact-page">
+  <!-- Cursor Canvas -->
+  <canvas id="cursorCanvas"></canvas>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">
+        <a href="index.html" class="logo-link">Nergal's Portfolio</a>
+      </h1>
+      <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutMe.html"class="active">About Me</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Cloud Transition Overlay -->
+    <div id="cloud-transition"></div>  
+
+    <section class="about-me">
+      <div class="about-heading">
+        <h2 class="about-title">About Me</h2>
+        <p class="about-subtitle">
+          Multimedia Developer with a Strong Technical Foundation
+        </p>
+      </div>
+
+      <div class="about-description">
+        <p>
+          I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering. 
+          With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions.
+        </p>
+        <p>
+          My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript. 
+          Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
+        </p>
+      </div>
+<!-- 
+      <div class="about-cards">
+        <div class="fact-box">
+          <h3>About Me</h3>
+          <ul>
+            <li>Love video games and music</li>
+            <li>Learning Spanish on Duolingo</li>
+            <li>Exploring AI and Robotics</li>
+          </ul>
+        </div> -->
+
+        <!-- <div class="fact-box"> -->
+          <h3>More About Me</h3>
+          <ul>
+            <li>Skilled in UX/UI and development</li>
+            <li>Backend software experience</li>
+            <li>Creative, curious, and always improving</li>
+          </ul>
+        <!-- </div> -->
+
+        <div class="skills-columns">
+          <div class="skills-column">
+            <span class="skill-bubble">HTML</span>
+            <span class="skill-bubble">CSS</span>
+            <span class="skill-bubble">JavaScript</span>
+            <span class="skill-bubble">SQL</span>
+            <span class="skill-bubble">C#</span>
+          </div>
+          <div class="skills-column">
+            <span class="skill-bubble">Python</span>
+            <span class="skill-bubble">After Effects</span>
+            <span class="skill-bubble">Photoshop</span>
+            <span class="skill-bubble">Illustrator</span>
+            <span class="skill-bubble">InDesign</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="sun-footer-wrapper">
+    <div class="sun-glow"></div>
+    <footer>
+        <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
+    </footer>
+</div>
+
+  <!-- Scripts -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+
+  <script>
+    const canvas = document.getElementById('cursorCanvas');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    let dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+
+    function resize() {
+      canvas.width  = Math.floor(window.innerWidth * dpr);
+      canvas.height = Math.floor(window.innerHeight * dpr);
+      canvas.style.width  = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    let mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
+    let moving = false;
+    let lastMove = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      moving = true;
+      lastMove = performance.now();
+    });
+
+    let lastFrame = 0;
+    const FRAME_MS = 1000/30; // ~30fps
+    const LINES_PER_TICK = 3;
+
+    function drawTick(now) {
+      if (now - lastFrame < FRAME_MS) {
+        requestAnimationFrame(drawTick);
+        return;
+      }
+      lastFrame = now;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if (!moving && (now - lastMove) > 1000) {
+        requestAnimationFrame(drawTick);
+        return;
+      }
+      moving = false;
+
+      for (let i = 0; i < LINES_PER_TICK; i++) {
+        const offsetX = (Math.random() * 40 - 20);
+        const offsetY = (Math.random() * 40 - 20);
+        const endX = mouse.x + (Math.random() * 40 - 20);
+        const endY = mouse.y + (Math.random() * 40 - 20);
+
+        ctx.beginPath();
+        ctx.moveTo(mouse.x + offsetX, mouse.y + offsetY);
+        ctx.lineTo(endX, endY);
+        ctx.lineWidth = 0.8 + Math.random() * 0.8;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = '#ff0000';
+        ctx.strokeStyle = `rgba(255,0,0,${0.3 + Math.random() * 0.3})`;
+        ctx.stroke();
+      }
+
+      requestAnimationFrame(drawTick);
+    }
+    requestAnimationFrame(drawTick);
+
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      canvas.remove();
+    }
+  </script>
+
+  <!-- Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE2YXDH9N8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EE2YXDH9N8');
+  </script> -->
+
+</body>
+</html>
