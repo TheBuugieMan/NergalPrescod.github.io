@@ -9,17 +9,6 @@
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="Images/FaviconBlackandRed.png" type="image/png">
 
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nergal Prescod",
-    "url": "https://nergalprescod.com",
-    "logo": "https://nergalprescod.com/Images/FaviconBlackandRed.png"
-  }
-  </script>
-
 </head>
 
 <body class="contact-page">
@@ -46,26 +35,65 @@
   <!-- Main Content -->
   <main>
     <!-- Cloud Transition Overlay -->
+    <div id="js-stars"></div>
+
     <div id="cloud-transition"></div>  
 
     <section class="about-me">
       <div class="about-heading">
         <h2 class="about-title">About Me</h2>
         <p class="about-subtitle">
-          Multimedia Developer with a Strong Technical Foundation
+          Developer · Creator · Problem Solver
         </p>
       </div>
 
       <div class="about-description">
-        <p>
-          I blend creativity and technology, with expertise in digital design, UI/UX, web development, and software engineering. 
-          With two years of backend software engineering experience, I’ve worked with C#, SQL, Azure, and Git, building efficient and scalable solutions.
-        </p>
-        <p>
-          My design work spans graphic design, front-end development, and animation, utilizing tools like Adobe Creative Suite, Figma, HTML, CSS, and JavaScript. 
-          Passionate about storytelling, problem-solving, and innovation, I create visually compelling and technically sound digital experiences that bridge art and functionality.
-        </p>
-      </div>
+          <p class="fade-in">
+      Hey, I’m Nergal — a <strong>software engineer</strong> and <strong>multimedia creator</strong>
+      passionate about bridging logic and creativity. My main programming language is <strong>C#</strong>,
+      which was the first language I learned, and I’ve since become skilled with <strong>SQL</strong>, <strong>VB.NET</strong>,
+      and core <strong>Object-Oriented Programming</strong> principles like encapsulation, inheritance, and polymorphism.
+    </p>
+
+    <p class="fade-in">
+      Professionally, I’ve worked as a <strong>Software Engineer at Vertafore</strong> and
+      completed internships at <strong>MGA Systems</strong> and <strong>Vertafore</strong> as a Junior Developer.
+      During these roles, I maintained production codebases, built internal tools, debugged complex issues,
+      and even contributed to developing a <strong>2D side-scroller game</strong> as part of my internship projects.
+    </p>
+
+    <p class="fade-in">
+      Beyond engineering, I designed and coded this site from scratch to showcase my work.
+      I’m fluent with tools like <strong>Visual Studio</strong>, <strong>VS Code</strong>,
+      and <strong>Adobe Creative Suite</strong> — Photoshop, Illustrator, and InDesign.
+      My creative process is influenced by surrealist art, especially <strong>René Magritte</strong> —
+      his painting <em>The Lovers</em> is one of my all-time favorites and inspires me to create
+      work that feels mysterious and open to interpretation.
+    </p>
+
+    <!-- NEW PARAGRAPH -->
+    <p class="fade-in">
+      I also have a strong passion for <strong>web development</strong> and multimedia projects.
+      I’m skilled in <strong>C#</strong>, <strong>Python</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>, and <strong>CSS</strong>,
+      giving me the ability to build both functional and visually appealing applications.
+      This blend of technical knowledge and creative vision allows me to craft interactive experiences,
+      from polished websites to innovative multimedia pieces that merge code and art.
+    </p>
+
+    <p class="fade-in">
+      Outside of code and design, I love building things in the real world.
+      I’ve created a <strong>robotic arm powered by Arduino and servos</strong>, wired and assembled myself,
+      and I’m currently developing a <strong>Raspberry Pi AI assistant</strong> that blends voice interaction
+      with smart automation. I also enjoy playing chess, learning new tech stacks, and exploring
+      ways to connect software and hardware in unique projects.
+    </p>
+
+    <p class="fade-in">
+      At my core, I’m someone who experiments, learns, and pushes myself to improve —
+      whether I’m solving a hard bug, printing a new design on my 3D printer, or turning a dream-inspired
+      concept into digital art. I’m always open to trying new things and seeing how far my ideas can go.
+    </p>
+  </div>
 <!-- 
       <div class="about-cards">
         <div class="fact-box">
@@ -78,31 +106,7 @@
         </div> -->
 
         <!-- <div class="fact-box"> -->
-          <h3>More About Me</h3>
-          <ul>
-            <li>Skilled in UX/UI and development</li>
-            <li>Backend software experience</li>
-            <li>Creative, curious, and always improving</li>
-          </ul>
-        <!-- </div> -->
-
-        <div class="skills-columns">
-          <div class="skills-column">
-            <span class="skill-bubble">HTML</span>
-            <span class="skill-bubble">CSS</span>
-            <span class="skill-bubble">JavaScript</span>
-            <span class="skill-bubble">SQL</span>
-            <span class="skill-bubble">C#</span>
-          </div>
-          <div class="skills-column">
-            <span class="skill-bubble">Python</span>
-            <span class="skill-bubble">After Effects</span>
-            <span class="skill-bubble">Photoshop</span>
-            <span class="skill-bubble">Illustrator</span>
-            <span class="skill-bubble">InDesign</span>
-          </div>
-        </div>
-      </div>
+         
     </section>
   </main>
 
@@ -202,6 +206,39 @@
     if (window.matchMedia('(max-width: 600px)').matches) {
       canvas.remove();
     }
+  </script>
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const paragraphs = document.querySelectorAll(".about-description p");
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add("visible"), index * 200); // Stagger effect
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  paragraphs.forEach(p => observer.observe(p));
+});
+</script>
+
+<script>
+    function createStarField() {
+      const starsContainer = document.getElementById("js-stars");
+      if (!starsContainer) return;
+      for (let i = 0; i < 125; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${2 + Math.random() * 3}s`;
+        starsContainer.appendChild(star);
+      }
+    }
+    window.addEventListener("DOMContentLoaded", createStarField);
   </script>
 
   <!-- Google Analytics -->

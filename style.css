@@ -236,7 +236,7 @@
     font-family: 'MyCustomFont7', sans-serif;
     text-shadow: 2px 2px 5px #ffffff, 0 0 20px #f20000, 0 0 40px #ff4500;
     /*font-family: 'Rubik Moonrocks', cursive;*/
-    font-size: 6.5rem !important;
+    font-size: 4.0rem !important;
     margin-bottom: 20px;
   }
 
@@ -986,50 +986,68 @@ body {
   pointer-events: none;
 }
 
- .about-me {
-      margin-top: 0; /* remove giant margin */
-  padding: 6rem 20px; /* plenty of internal spacing */
-  background: rgba(0, 0, 0, 0.6); /* optional to add contrast */
-  text-align: center;
-  color: #fff;
-  }
-  
-  .about-heading {
-    margin-bottom: 30px;
-  }
-  
-  .about-title {
-    font-size: 5rem;
-    color: #FFD700;
-    font-family: 'MyCustomFont7', sans-serif;
-  }
-  
-  .about-subtitle {
-    font-family: 'MyCustomFont7', sans-serif;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 2.7rem;
-  }
-  
-  .about-description {
-    max-width: 800px;
-    margin: 0 auto 50px;
-    line-height: 1.8;
-    font-family: 'MyCustomFont7', sans-serif;
-    color: white;
-    font-size: 1.05rem;
-  }
-  
-  .about-container {
-  background: rgba(0, 0, 0, 0.7); /* slightly transparent */
+.about-me {
+  background: rgba(0, 0, 0, 0.75);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 2rem 3rem;
   max-width: 900px;
   margin: 3rem auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  transform: translateY(10px);
+  animation: containerFadeIn 0.8s ease forwards;
 }
 
-  
+@keyframes containerFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.about-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: #FFD700;
+  font-family: 'MyCustomFont7', sans-serif;
+  text-align: center;
+  letter-spacing: 3px;
+  text-shadow: 0px 3px 10px rgba(255, 215, 0, 0.4);
+}
+
+.about-subtitle {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.about-description p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, 
+    transform 0.8s ease, 
+    transform 0.3s ease-in-out, 
+    box-shadow 0.3s ease-in-out;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.about-description p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect – smooth scale-up & subtle glow */
+.about-description p:hover {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+  cursor: default;
+}
+
   /* .about-cards {
     display: flex;
     justify-content: center;
