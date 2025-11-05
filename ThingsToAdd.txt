@@ -8,3 +8,41 @@ Change the nergals portfolio to another color for better readiability
 -publish it to google
 -Add software engineering section
 -Enhance it overall
+
+10.09/2025
+-Add some other work to add work thats not on main page
+
+Things added today
+-Removed photoshop,indesign illustrator titles
+-Rearanged photoshop
+-Enhanced cursor
+
+
+Things to add
+10/28/25'
+-Change the color of the heading words or give it black shadow behhind
+
+-Edit Words and highlioght important words 
+-Add Magazine style flip pages to talk about me
+-When click on project have it take you to another page for case study
+
+
+
+Things to Add 
+-Case study for all of pieces
+
+Contact Page
+-Contact page add github,linkedin, 
+-add ability to request resume
+-Add A blurb on the contact me page and say the things you can hire me for
+
+
+Things Added 11/04/25
+-Removed who started the fire
+-Added midterm project "Higher Connections"
+-Add about me blurb to the front page
+-Lowered explore my creative
+-change nav bar glow effect to black
+-Added bounce affect to the Welcome to my portfolio
+-Removed photoshop,illustrator, and indesign titles
+-Replaced with projects title

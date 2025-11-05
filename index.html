@@ -44,9 +44,10 @@
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <nav>
         <ul class="nav-links">
-          <li><a href="#photoshop">Photoshop</a></li>
+          <!-- <li><a href="#photoshop">Photoshop</a></li>
           <li><a href="#indesign">InDesign</a></li>
-          <li><a href="#illustrator">Illustrator</a></li>
+          <li><a href="#illustrator">Illustrator</a></li> -->
+          <li><a href="#photoshop">Projects</a></li>
           <li><a href="aboutMe.html">About Me</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -58,13 +59,42 @@
     <!-- Hero -->
     <section class="hero">
       <div id="js-stars"></div>
-      <h2>Welcome to My Portfolio</h2>
-      <p>Explore my creative and technical projects below.</p>
+      <!-- <h2 class="welcome js-floats">Welcome to My Portfolio</h2> -->
+       <h2 class="welcome">
+   <span style="--i:0">W</span>
+  <span style="--i:1">E</span>
+  <span style="--i:2">L</span>
+  <span style="--i:3">C</span>
+  <span style="--i:4">O</span>
+  <span style="--i:5">M</span>
+  <span style="--i:6">E</span>
+  <span style="--i:7"> </span>
+  <span style="--i:8">T</span>
+  <span style="--i:9">O</span>
+  <span style="--i:10"> </span>
+  <span style="--i:11">M</span>
+  <span style="--i:12">Y</span>
+  <span style="--i:13"> </span>
+  <span style="--i:14">P</span>
+  <span style="--i:15">O</span>
+  <span style="--i:16">R</span>
+  <span style="--i:17">T</span>
+  <span style="--i:18">F</span>
+  <span style="--i:19">O</span>
+  <span style="--i:20">L</span>
+  <span style="--i:21">I</span>
+  <span style="--i:22">O</span>
+</h2>
+      <h5>Hey, I’m Nergal — a <strong>software engineer</strong> and <strong>multimedia creator</strong>
+      passionate about bridging logic and creativity.</h5>
+      <h3> </h3>
+      <h4>Explore my creative and technical projects below.</h4>
+
     </section>
 
     <!-- Photoshop -->
     <section id="photoshop" class="portfolio-gallery">
-      <h2>Photoshop Projects</h2>
+      <h2>Some of my Projects</h2>
 
       <figure
         data-title="The Hero's Journey"
@@ -74,48 +104,49 @@
       </figure>
 
       <figure
-        data-title="Who started the fire?"
+        data-title="Higher Connections"
         data-description="A fun project for my MMP 100 class at BMCC inspired by a 'blimp of chaos'—playing with the tension between destruction and calm. This would make a bold poster, album cover, or editorial spread.">
-        <img src="Images/creation2.webp" alt="Who started the fire?" />
-        <figcaption>Who started the fire?</figcaption>
+        <img src="Images/MidtermMMA225.png" alt="Who started the fire?" />
+        <figcaption>Higher Connections</figcaption>
       </figure>
 
-      <figure
+    
+    </section>
+
+    <!-- InDesign -->
+    <section id="indesign" class="portfolio-gallery">
+      <h2></h2>
+      <figure data-title="Magazine Cover" data-description="Editorial cover concept exploring hierarchy and contrast.">
+        <img src="Images/Mag-Cover.png" alt="Magazine Cover" />
+        <figcaption>Graffiti Magazine</figcaption>
+      </figure>
+      <figure data-title="Magazine Inside" data-description="Interior spread layout—grid, rhythm, and type pairing.">
+        <img src="Images/Mag-Inside.png" alt="Magazine Inside"  />
+        <figcaption>Inside</figcaption>
+      </figure>
+    </section>
+
+    <!-- Illustrator -->
+    <section id="illustrator" class="portfolio-gallery">
+      <h2></h2>
+      <figure data-title="The birth of shadows" data-description="Stylized vector illustration—mythic and minimal.">
+        <img src="Images/SUNVOIDMOON.webp" alt="The birth of shadows"  />
+        <figcaption>The birth of shadows</figcaption>
+      </figure>
+
+<figure
         data-title="Saturn Welcomes You"
         data-description="Surreal travel poster energy—cosmic invitation vibes. Strong as a poster/print or cover art.">
         <img src="Images/Saturn-Welcomes you pt2.png" alt="Saturn Welcomes You" />
         <figcaption>Saturn Welcomes You</figcaption>
       </figure>
 
-      <figure
-        data-title="Dive"
-        data-description="Motion, atmosphere, and wonder. Designed with negative space to work nicely as cover art.">
-        <img src="Images/creation3.webp" alt="Dive" />
-        <figcaption>Dive</figcaption>
-      </figure>
+
     </section>
 
-    <!-- InDesign -->
-    <section id="indesign" class="portfolio-gallery">
-      <h2>InDesign Projects</h2>
-      <figure data-title="Magazine Cover" data-description="Editorial cover concept exploring hierarchy and contrast.">
-        <img src="Images/Mag-Cover.png" alt="Magazine Cover" />
-        <figcaption>Magazine Cover</figcaption>
-      </figure>
-      <figure data-title="Magazine Inside" data-description="Interior spread layout—grid, rhythm, and type pairing.">
-        <img src="Images/Mag-Inside.png" alt="Magazine Inside"  />
-        <figcaption>Magazine Inside</figcaption>
-      </figure>
-    </section>
-
-    <!-- Illustrator -->
-    <section id="illustrator" class="portfolio-gallery">
-      <h2>Illustrator Projects</h2>
-      <figure data-title="The birth of shadows" data-description="Stylized vector illustration—mythic and minimal.">
-        <img src="Images/SUNVOIDMOON.webp" alt="The birth of shadows"  />
-        <figcaption>The birth of shadows</figcaption>
-      </figure>
-    </section>
+  <footer>
+        <p>Designed & hand-coded by Nergal Prescod · © 2025</p>
+    </footer>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -124,6 +155,8 @@
       <p id="lightbox-description" style="margin-top:10px; font-size:1rem; max-width:80%; text-align:center;"></p>
     </div>
   </main>
+
+   
 
   <!-- Cloud transition + audio -->
   <div id="cloud-transition"></div>
@@ -299,7 +332,7 @@
 
     let lastFrame = 0;
     const FRAME_MS = 1000/30; // ~30fps
-    const LINES_PER_TICK = 3;
+    const LINES_PER_TICK = 7;
 
     function drawTick(now) {
       if (now - lastFrame < FRAME_MS) {
@@ -341,5 +374,6 @@
       canvas.remove();
     }
   </script>
+
 </body>
 </html>

@@ -68,6 +68,11 @@
   h1, h2, h3, .hero h2, .dev-title {
     font-family: 'MyCustomFont7', sans-serif;
   }
+
+  h5 {
+    font-family: 'MyCustomFont7, sans-serif';
+    color: white;
+  }
   
   body,p, .about-box, .nav-links, .btn {
     font-family: 'MyCustomFont3', sans-serif;
@@ -132,9 +137,9 @@
     text-decoration: none;
     color: #FFD700; /* Cyan */
     text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff;
+    0 0 5px #000000,
+    0 0 10px #000000,
+    0 0 20px #000000;
     
     /*color: #ffea02; */
     padding: 5px 10px;
@@ -144,7 +149,7 @@
   
   .nav-links li a:hover,
   .nav-links li a.active {
-    background: #00bcd4;
+    background: #000000;
   }
 
   @media (max-width: 768px) {
@@ -169,7 +174,7 @@
   /* ---------------------------- */
   .hero {
     background: url('Images/TabletBckg.webp') no-repeat center center/cover;
-    color: #000000;
+    color: #FFD700;
     padding: 140px 20px 80px; /* Push content down by header height */
     text-align: center;
     position: relative;
@@ -234,16 +239,58 @@
   } 
    .hero h2 {
     font-family: 'MyCustomFont7', sans-serif;
-    text-shadow: 2px 2px 5px #ffffff, 0 0 20px #f20000, 0 0 40px #ff4500;
+    text-shadow: 2px 2px 5px #000000, 0 0 20px #f20000, 0 0 40px #ff4500;
     /*font-family: 'Rubik Moonrocks', cursive;*/
-    font-size: 4.0rem !important;
-    margin-bottom: 20px;
+    font-size: 3.1rem !important;
+    margin-bottom: 120px;
+    animation: floatText 3s ease-in-out infinite;
   }
+  @keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); } /* Moves up slightly */
+
+}
 
   .hero p {
   font-family: 'MyCustomFont5', sans-serif;
 
   }
+  .hero h5 {
+  font-size: 1.1rem ;
+  display: block;
+  margin-top: 150;
+  max-width: 700px; /* adjust width to match your red line limits */
+  margin: 0 auto; /* centers the text block */
+  text-align: center;
+  line-height: 1.6;
+  font-family: 'MyCustomFont3', sans-serif;
+
+  }
+
+  .hero h4 {
+  display: block;
+  margin-top: 200px; /* adjust value as needed */
+  text-align: center;
+  font-weight: bold;
+  color: #ffcc00;
+  font-size: 1.0rem;
+  }
+.welcome { text-align:center; font-weight:800; letter-spacing:2px; }
+.welcome span{
+  display:inline-block;
+  margin:0 .25rem;
+  animation: floatWord 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.2s); /* staggers each word */
+}
+@keyframes floatWord{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+
+/* be nice to users who prefer less motion */
+@media (prefers-reduced-motion: reduce){
+  .welcome span{ animation: none; }
+}
 
   /* ---------- PORTFOLIO-ONLY STYLING ---------- */
 
@@ -270,7 +317,7 @@ body.portfolio-page .portfolio-gallery figure {
 
 body.portfolio-gallery h2
 {
-font-family: 'MyCustomFont4', san sans-serif;
+font-family: 'MyCustomFont4', sans-serif;
 
 }
 
@@ -296,7 +343,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
   }
 
   .hero h2, .hero p {
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   }
 
   .hero a.btn {
@@ -599,16 +646,17 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     font-size: 0.95rem;
     text-align: center;
     padding: 20px;
+    z-index: 0;
   }
-  
+/*   
   .sun-footer-wrapper {
     position: relative;
     background: #151515;
     padding-top: 60px;
     text-align: center;
   }
-  
-  .sun-glow {
+   */
+  /* .sun-glow {
     position: absolute;
     top: -30px;
     left: 50%;
@@ -629,7 +677,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
       box-shadow: 0 0 40px 15px rgba(255, 150, 0, 0.6);
     }
   }
-  
+   */
   /* ---------------------------- */
   /*         PORTFOLIO           */
   /* ---------------------------- */
@@ -995,7 +1043,8 @@ body {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
   transform: translateY(10px);
-  animation: containerFadeIn 0.8s ease forwards;
+}
+ /* animation: containerFadeIn 0.8s ease forwards;
 }
 
 @keyframes containerFadeIn {
@@ -1004,6 +1053,7 @@ body {
     opacity: 1;
   }
 }
+*/
 
 .about-title {
   font-size: clamp(3rem, 6vw, 5rem);
