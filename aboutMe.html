@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="contact-page">
+<body class="about-page">
   <!-- Cursor Canvas -->
   <canvas id="cursorCanvas"></canvas>
 
@@ -38,85 +38,24 @@
     <div id="js-stars"></div>
 
     <div id="cloud-transition"></div>  
+  <!-- MAGAZINE -->
+  <section class="mag" aria-label="Magazine">
+    <!-- Cover -->
+    <figure class="mag-cover" id="magCover" role="button" tabindex="0" aria-label="Open magazine">
+      <img src="Images/New About me page spreadsjpeg.jpg" alt="Multimedia Developer — Magazine Cover">
+      <figcaption>Click to open</figcaption>
+    </figure>
 
-    <section class="about-me">
-      <div class="about-heading">
-        <h2 class="about-title">About Me</h2>
-        <p class="about-subtitle">
-          Developer · Creator · Problem Solver
-        </p>
-      </div>
-
-      <div class="about-description">
-          <p class="fade-in">
-      Hey, I’m Nergal — a <strong>software engineer</strong> and <strong>multimedia creator</strong>
-      passionate about bridging logic and creativity. My main programming language is <strong>C#</strong>,
-      which was the first language I learned, and I’ve since become skilled with <strong>SQL</strong>, <strong>VB.NET</strong>,
-      and core <strong>Object-Oriented Programming</strong> principles like encapsulation, inheritance, and polymorphism.
-    </p>
-
-    <p class="fade-in">
-      Professionally, I’ve worked as a <strong>Software Engineer at Vertafore</strong> and
-      completed internships at <strong>MGA Systems</strong> and <strong>Vertafore</strong> as a Junior Developer.
-      During these roles, I maintained production codebases, built internal tools, debugged complex issues,
-      and even contributed to developing a <strong>2D side-scroller game</strong> as part of my internship projects.
-    </p>
-
-    <p class="fade-in">
-      Beyond engineering, I designed and coded this site from scratch to showcase my work.
-      I’m fluent with tools like <strong>Visual Studio</strong>, <strong>VS Code</strong>,
-      and <strong>Adobe Creative Suite</strong> — Photoshop, Illustrator, and InDesign.
-      My creative process is influenced by surrealist art, especially <strong>René Magritte</strong> —
-      his painting <em>The Lovers</em> is one of my all-time favorites and inspires me to create
-      work that feels mysterious and open to interpretation.
-    </p>
-
-    <!-- NEW PARAGRAPH -->
-    <p class="fade-in">
-      I also have a strong passion for <strong>web development</strong> and multimedia projects.
-      I’m skilled in <strong>C#</strong>, <strong>Python</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>, and <strong>CSS</strong>,
-      giving me the ability to build both functional and visually appealing applications.
-      This blend of technical knowledge and creative vision allows me to craft interactive experiences,
-      from polished websites to innovative multimedia pieces that merge code and art.
-    </p>
-
-    <p class="fade-in">
-      Outside of code and design, I love building things in the real world.
-      I’ve created a <strong>robotic arm powered by Arduino and servos</strong>, wired and assembled myself,
-      and I’m currently developing a <strong>Raspberry Pi AI assistant</strong> that blends voice interaction
-      with smart automation. I also enjoy playing chess, learning new tech stacks, and exploring
-      ways to connect software and hardware in unique projects.
-    </p>
-
-    <p class="fade-in">
-      At my core, I’m someone who experiments, learns, and pushes myself to improve —
-      whether I’m solving a hard bug, printing a new design on my 3D printer, or turning a dream-inspired
-      concept into digital art. I’m always open to trying new things and seeing how far my ideas can go.
-    </p>
-   </div>
-    </section>
+    <!-- Inside spread (pages 1–2 exported as one image) -->
+    <div class="mag-spread" id="magSpread" aria-hidden="true">
+      <img src="Images/New About me page spreadsjpeg2.jpg" alt="Where Logic Meets Light — Pages 1–2">
+      <!-- optional close/back -->
+      <button class="mag-close" id="magClose" aria-label="Close magazine">×</button>
+    </div>
+  </section>  
   </main>
 
   <!-- Scripts -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-        navLinks.classList.remove('active');
-      }
-    });
-  </script>
 
   <script>
     const canvas = document.getElementById('cursorCanvas');
@@ -187,23 +126,6 @@
     }
   </script>
 
- <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const paragraphs = document.querySelectorAll(".about-description p");
-  
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add("visible"), index * 200); // Stagger effect
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  paragraphs.forEach(p => observer.observe(p));
-});
-</script>
-
 <script>
     function createStarField() {
       const starsContainer = document.getElementById("js-stars");
@@ -219,6 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     window.addEventListener("DOMContentLoaded", createStarField);
   </script>
+
+  <script>
+  // preload spread so the flip feels instant
+  const preload = new Image(); preload.src = 'Images/mag-spread-1-2.jpg';
+
+  const mag = document.querySelector('.mag');
+  const cover = document.getElementById('magCover');
+  const closeBtn = document.getElementById('magClose');
+
+  function openMag(){ mag.classList.add('open'); cover.setAttribute('aria-hidden','true'); }
+  function closeMag(){ mag.classList.remove('open'); cover.removeAttribute('aria-hidden'); }
+
+  cover.addEventListener('click', openMag);
+  cover.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openMag(); });
+  if (closeBtn){ closeBtn.addEventListener('click', closeMag); }
+</script>
+
 
   <!-- Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE2YXDH9N8"></script>
