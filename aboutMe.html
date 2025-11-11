@@ -140,6 +140,31 @@
     window.addEventListener("DOMContentLoaded", createStarField);
   </script>
 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+  
+    // Toggle nav
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent it from closing immediately
+      navLinks.classList.toggle('active');
+    });
+  
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+
   <!-- <script>
   // preload spread so the flip feels instant
   const preload = new Image(); preload.src = 'Images/mag-spread-1-2.jpg';
