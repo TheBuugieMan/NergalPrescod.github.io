@@ -54,6 +54,7 @@
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+    
     background: url("Images/HomeBackground.webp") no-repeat center center/cover;
 
   /*  background-color: #000000; */
@@ -727,7 +728,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     background-attachment: fixed;
   }
 
-  .about-page {
+  .about-page, .case-study {
     background: url("Images/HomeBackground.webp") no-repeat center center / cover;
     min-height: 100vh;
     background-attachment: fixed;
@@ -800,10 +801,6 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     .fact-box {
       width: 80%;
       margin-bottom: 20px;
-    }
-  
-    .sunset-animation {
-      height: 150px;
     }
   
     .about-section {
@@ -998,6 +995,24 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
   }
 }
 
+@media (max-width: 680px) {
+
+  /* Hide the per-letter version on small screens */
+  .portfolio-page .welcome {
+    display: none !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .portfolio-page h5 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    line-height: 1.5;
+    color: #fff;
+  }
+}
+
 @media (max-width: 480px) {
   .starry-intro {
     background: url('Images/StarrybkgPhone.webp') no-repeat center center / cover;
@@ -1025,15 +1040,15 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 }
 @media (min-width: 481px) and (max-width: 1300px) {
   .starry-intro {
-    background: url('Images/StarryBckgTablet.webp') no-repeat center center / cover;
+    background: color(rgb(0, 0, 0));
     background-attachment: scroll;
   }
 }
-body {
+body.portfolio-page {
   cursor: none; /* Hide default cursor */
 }
 
-#cursorCanvas {
+body.portfolio-page #cursorCanvas {
   position: fixed;
   top: 0;
   left: 0;
@@ -1066,60 +1081,53 @@ body {
 /* MAGAZINE */
 .mag {
   position: relative;
-  max-width: 1100px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-  perspective: 1600px;                 /* 3D flip */
+  max-width: 2000px;         /* larger overall width */
+  margin: 2rem auto 2rem;   /* pushes it down significantly */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.mag-cover {
-  position: relative;
-  margin: 0;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transform-origin: left center;
-  transition: transform 1.1s cubic-bezier(.2,.7,.2,1), box-shadow .6s;
-  box-shadow: 0 20px 60px rgba(0,0,0,.45);
-  border-radius: 12px;
-}
-.mag-cover img { width: 100%; display: block; border-radius: 12px; }
-.mag-cover figcaption{
-  position: absolute; right: 1rem; bottom: 1rem;
-  background: rgba(0,0,0,.6); color:#ffcc00;
-  padding:.4rem .7rem; border-radius:.4rem; font-weight:700;
-  letter-spacing:.02em;
+body.about-page {
+  display: block;                    /* cancels the global flex */
+  background: #000 url("Images/HomeBackground.png") center / cover fixed no-repeat; /* or whatever bg you want */
 }
 
-/* Spread sits under the cover until opened */
-.mag { 
-  margin-top: clamp(5rem, 15vh, 13rem);  /* tweak as you like */
+/* if your header is fixed, pad the main so content isn't hidden */
+body.about-page main { padding-top: var(--header-h, 80px); }
+
+/* pull the magazine spread up and size it */
+body.about-page .mag {
+  margin: 3.5rem auto 4rem !important;   /* smaller top gap */
+  max-width: 1750px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
-.mag-spread{
-  position:absolute; inset:0;
-  opacity:0; pointer-events:none;
-  transition:opacity .5s ease .55s;
-}
-.mag-spread img{ width:100%; display:block; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.35); }
-.mag-close{
-  position:absolute; top:.75rem; right:.75rem;
-  background:rgba(0,0,0,.6); color:#ffcc00; border:0; border-radius:.4rem;
-  font-size:1.25rem; line-height:1; padding:.25rem .5rem; cursor:pointer;
+body.about-page .mag-spread img {
+  width: 100%;
+  max-width: 1800px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.45);
 }
 
-/* Open state */
-.mag.open .mag-cover{
-  transform: rotateY(-178deg);
-  backface-visibility: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,.35);
-}
-.mag.open .mag-spread{ opacity:1; pointer-events:auto; }
-
-/* Mobile fallback: fade instead of 3D flip */
-@media (max-width: 640px){
-  .mag { perspective: none; }
-  .mag.open .mag-cover{ opacity:0; transform:none; }
+.mag-spread img:hover {
+  transform: scale(1.08);
 }
 
+/* Optional — for mobile */
+@media (max-width: 768px) {
+  .mag {
+    margin-top: 6rem;
+    padding: 1rem;
+  }
+  .mag-spread img {
+    max-width: 95%;
+    transform: none;
+  }
+}
 /* Make sure stars/clouds stay behind */
 #js-stars, #cloud-transition { z-index:0; }
 .mag { z-index:1; position:relative; }
@@ -1157,6 +1165,119 @@ body {
 .contact-links a img:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 0 10px #ff0000);
+}
+
+.project-block {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.case-study-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #ffcc00; /* Matches your theme yellow */
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.case-study {
+   min-height: 100vh; /* Ensures the section covers the full page */
+  background: url('Images/HomeBackground.webp') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  padding: 60px 20px;
+  padding-top: 80px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.case-study h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.case-study img.case-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.case-study h2 {
+  margin-top: 30px;
+  color: #ffcc00;
+}
+
+.case-study a {
+  display: inline-block;
+  margin-top: 40px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+body.case-study-page {
+  background: url('Images/HomeBackground.png') no-repeat center center fixed;
+  background-size: cover;
+}
+.case-study p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem; /* optional override */
+  line-height: 1.7; /* optional for readability */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-button {
+  margin-top: 130px;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  color: #ffcc00; /* your theme yellow */
+  padding: 10px 18px;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-button:hover {
+background-color: #ffcc00;
+  color: #000;
+  transform: scale(1.05);}
+
+  .image-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.image-group figure,
+.case-study figure {
+  margin: 0;
+  text-align: center;
+}
+
+.process-img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+figcaption {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #ccc;
 }
 
 

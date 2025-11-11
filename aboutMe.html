@@ -19,12 +19,12 @@
   <header>
     <div class="container">
       <h1 class="logo">
-        <a href="index.html" class="logo-link">Nergal's Portfolio</a>
+        <a href="index.html" class="logo-link">Nergal Prescod</a>
       </h1>
       <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</div>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Projects</a></li>
           <li><a href="aboutMe.html"class="active">About Me</a></li>
           <li><a href="contact.html" >Contact</a></li>
         </ul>
@@ -37,27 +37,20 @@
     <!-- Cloud Transition Overlay -->
     <div id="js-stars"></div>
 
-    <div id="cloud-transition"></div>  
   <!-- MAGAZINE -->
   <section class="mag" aria-label="Magazine">
-    <!-- Cover -->
-    <figure class="mag-cover" id="magCover" role="button" tabindex="0" aria-label="Open magazine">
-      <img src="Images/New About me page spreadsjpeg.jpg" alt="Multimedia Developer — Magazine Cover">
-      <figcaption>Click to open</figcaption>
-    </figure>
-
-    <!-- Inside spread (pages 1–2 exported as one image) -->
-    <div class="mag-spread" id="magSpread" aria-hidden="true">
-      <img src="Images/New About me page spreadsjpeg2.jpg" alt="Where Logic Meets Light — Pages 1–2">
-      <!-- optional close/back -->
-      <button class="mag-close" id="magClose" aria-label="Close magazine">×</button>
-    </div>
-  </section>  
+  <div class="mag-spread">
+    <img src="Images/New About me page 22.jpg"
+         alt="Where Logic Meets Light — Pages 1–2">
+    <!-- optional close/back -->
+    <!-- <button class="mag-close" id="magClose" aria-label="Close magazine">×</button> -->
+  </div>
+</section>
   </main>
 
   <!-- Scripts -->
 
-  <script>
+  <!-- <script>
     const canvas = document.getElementById('cursorCanvas');
     const ctx = canvas.getContext('2d', { alpha: true });
     let dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -124,7 +117,7 @@
     if (window.matchMedia('(max-width: 600px)').matches) {
       canvas.remove();
     }
-  </script>
+  </script> -->
 
 <script>
     function createStarField() {
@@ -142,7 +135,7 @@
     window.addEventListener("DOMContentLoaded", createStarField);
   </script>
 
-  <script>
+  <!-- <script>
   // preload spread so the flip feels instant
   const preload = new Image(); preload.src = 'Images/mag-spread-1-2.jpg';
 
@@ -156,7 +149,7 @@
   cover.addEventListener('click', openMag);
   cover.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openMag(); });
   if (closeBtn){ closeBtn.addEventListener('click', closeMag); }
-</script>
+</script> -->
 
 
   <!-- Google Analytics -->

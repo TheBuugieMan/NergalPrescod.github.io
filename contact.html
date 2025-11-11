@@ -33,17 +33,17 @@
 
 </head>
 <div id="js-stars"></div>
-<body class="contact-page">
+<body class="about-page">
   <header>
     <div class="container">
       <h1 class="logo">
-  <a href="index.html" class="logo-link">Nergal's Portfolio</a>
+  <a href="index.html" class="logo-link">Nergal Prescod</a>
       </h1>
           <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Projects</a></li>
           <li><a href="aboutMe.html">About Me</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
@@ -105,78 +105,6 @@
       }
     });
   </script>
-
-<script>
-const canvas = document.getElementById('cursorCanvas');
-const ctx = canvas.getContext('2d', { alpha: true });
-let dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-
-function resize() {
-  canvas.width  = Math.floor(window.innerWidth * dpr);
-  canvas.height = Math.floor(window.innerHeight * dpr);
-  canvas.style.width  = window.innerWidth + "px";
-  canvas.style.height = window.innerHeight + "px";
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-}
-resize();
-window.addEventListener('resize', resize);
-
-let mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
-let moving = false;
-let lastMove = 0;
-
-document.addEventListener('mousemove', (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-  moving = true;
-  lastMove = performance.now();
-});
-
-let lastFrame = 0;
-const FRAME_MS = 1000/30; // ~30fps
-const LINES_PER_TICK = 3;
-
-function drawTick(now) {
-  if (now - lastFrame < FRAME_MS) {
-    requestAnimationFrame(drawTick);
-    return;
-  }
-  lastFrame = now;
-
-  // Instead of black fade, just clear only what we drew
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  if (!moving && (now - lastMove) > 1000) {
-    requestAnimationFrame(drawTick);
-    return;
-  }
-  moving = false;
-
-  for (let i = 0; i < LINES_PER_TICK; i++) {
-    const offsetX = (Math.random() * 40 - 20);
-    const offsetY = (Math.random() * 40 - 20);
-    const endX = mouse.x + (Math.random() * 40 - 20);
-    const endY = mouse.y + (Math.random() * 40 - 20);
-
-    ctx.beginPath();
-    ctx.moveTo(mouse.x + offsetX, mouse.y + offsetY);
-    ctx.lineTo(endX, endY);
-    ctx.lineWidth = 0.8 + Math.random() * 0.8;
-    ctx.shadowBlur = 4;
-    ctx.shadowColor = '#ff0000';
-    ctx.strokeStyle = `rgba(255,0,0,${0.3 + Math.random() * 0.3})`;
-    ctx.stroke();
-  }
-
-  requestAnimationFrame(drawTick);
-}
-requestAnimationFrame(drawTick);
-
-// Disable effect for small screens
-if (window.matchMedia('(max-width: 600px)').matches) {
-  canvas.remove();
-}
-</script>
 
 <script>
     function createStarField() {
