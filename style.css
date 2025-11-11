@@ -1004,7 +1004,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 }
 
 @media (max-width: 680px) {
-  .portfolio-page h5 {
+   h5, h4, p {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 400;
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
@@ -1015,7 +1015,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 
 @media (max-width: 480px) {
   .starry-intro {
-    background: url('Images/StarrybkgPhone.webp') no-repeat center center / cover;
+    background-color: #000 no-repeat center center / cover;
     background-attachment: scroll;
   }
 }
