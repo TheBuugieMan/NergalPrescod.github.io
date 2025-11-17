@@ -1044,9 +1044,10 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     background-attachment: scroll;
   }
 }
-body.portfolio-page {
+/* body.portfolio-page {
   cursor: none; /* Hide default cursor */
-}
+
+
 
 body.portfolio-page #cursorCanvas {
   position: fixed;
