@@ -961,23 +961,11 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 /* Mobile styles */
 @media (max-width: 768px) {
   .menu-toggle {
-    /* display: block;
-    color: yellow;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 10px; */
-    /* Move hamburger to the right */
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
     display: block;
     color: yellow;
     font-size: 1.8rem;
     cursor: pointer;
-    z-index: 2000;
-  }
-
+    padding: 10px;
   }
 
   .nav-links {
@@ -1014,6 +1002,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
     display: none !important;
   }
 }
+
 @media (max-width: 680px) {
    h5, h4, p, figcaption {
     font-family: 'Poppins', sans-serif !important;
