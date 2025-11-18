@@ -961,11 +961,23 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 /* Mobile styles */
 @media (max-width: 768px) {
   .menu-toggle {
+    /* display: block;
+    color: yellow;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px; */
+    /* Move hamburger to the right */
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
     color: yellow;
     font-size: 1.8rem;
     cursor: pointer;
-    padding: 10px;
+    z-index: 2000;
+  }
+
   }
 
   .nav-links {
@@ -989,7 +1001,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
   /* PHONE ONLY: 0px - 480px */
 @media (max-width: 480px) {
   .hero {
-    background: url('Images/PhoneBckg.webp') no-repeat center center / cover;
+    /* background: url('Images/PhoneBckg.webp') no-repeat center center / cover; */
     background-attachment: scroll;
     padding-top: 120px;
   }
@@ -1003,7 +1015,8 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
   }
 }
 
-@media (max-width: 680px) {
+/* COntrols font for mobile and tablet in work */
+@media (max-width: 1300px) {
    h5, h4, p, figcaption {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 400;
@@ -1024,7 +1037,7 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 /* TABLETS: 481px - 1024px */
 @media (min-width: 481px) and (max-width: 1300px) {
   .hero {
-    background: url('Images/TabletBckg.webp') no-repeat center center / cover;
+    /* background: url('Images/TabletBckg.webp') no-repeat center center / cover; */
     background-color: black;
     background-attachment: scroll;
     padding-top: 140px;
