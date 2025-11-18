@@ -961,11 +961,20 @@ margin-bottom: 5rem; /* flexible spacing (5 × root font size) */}
 /* Mobile styles */
 @media (max-width: 768px) {
   .menu-toggle {
+    /* display: block;
+    color: yellow;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px; */
+     position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
     color: yellow;
     font-size: 1.8rem;
     cursor: pointer;
-    padding: 10px;
+    z-index: 2000;
   }
 
   .nav-links {
