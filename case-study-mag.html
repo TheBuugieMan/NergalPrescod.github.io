@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graffiti Magazine · Case Study</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="icon" href="Images/FaviconBlackandRed.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body class="case-study-page">
+
+  <header>
+    <div class="container">
+      <h1 class="logo">
+        <a href="index.html" class="logo-link">Nergal Prescod</a>
+      </h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="aboutMe.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-study">
+      <h1>Graffiti Magazine</h1>
+      <p class="case-intro">
+        A two-page magazine spread designed in Adobe InDesign, combining
+        bold illustration, typography, and layout for a graffiti-inspired feature.
+      </p>
+
+      <h2>Mock Up</h2>
+      <img src="Images/MagazineMockUp.png"
+           alt="Graffiti Magazine Mock Up"
+           class="case-img">
+
+      <h2>Cover</h2>
+      <img src="Images/Mag-Cover.png"
+           alt="Graffiti Magazine Cover"
+           class="case-img">
+
+      <h2>Inside Spread</h2>
+      <img src="Images/Mag-Inside.png"
+           alt="Graffiti Magazine Inside Spread"
+           class="case-img">
+
+      <a href="index.html#indesign" class="back-link">← Back to Portfolio</a>
+    </section>
+  </main>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+  
+    // Toggle nav
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent it from closing immediately
+      navLinks.classList.toggle('active');
+    });
+  
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+  </body>
+</html>
