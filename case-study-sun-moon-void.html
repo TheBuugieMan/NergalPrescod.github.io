@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sun, Moon & Void · Motion Study</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="portfolio-page">
+  <header>
+    <div class="container">
+      <h1 class="logo">
+        <a href="index.html" class="logo-link">Nergal Prescod</a>
+      </h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="aboutMe.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-study">
+      <h1>Sun, Moon & Void</h1>
+      <p class="case-intro">
+        This piece started as a static illustration exploring light, shadow,
+        and the tension between consciousness and the unknown. I later brought
+        it to life through subtle motion using opacity and scale, turning it
+        into an ambient animated poster.
+      </p>
+
+      <h2>Original Still</h2>
+      <img src="Images/SUNVOIDMOON.webp"
+           alt="Sun, Moon & Void original artwork"
+           class="case-img">
+
+      <h2>Animated Version</h2>
+      <video
+        class="case-video"
+        src="Images/Assignment1-MMA-Revised V2Motion_1.mp4"
+        muted
+        loop
+        autoplay
+        playsinline>
+      </video>
+
+      <a href="index.html#photoshop" class="back-link">← Back to Portfolio</a>
+    </section>
+  </main>
+
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+  
+    // Toggle nav
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent it from closing immediately
+      navLinks.classList.toggle('active');
+    });
+  
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

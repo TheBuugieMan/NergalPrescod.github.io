@@ -123,17 +123,35 @@
   <img src="Images/MagazineMockUp.png" alt="The Hero's Journey">
   <figcaption>Graffiti Magazine</figcaption>
 </figure>
-<a href="case-study-mag.html" target="_blank" class="case-study-link">See more</a>
+<a href="case-study-mag.html" class="case-study-link">See more</a>
 </div>
+
     </section>
     <!-- Illustrator -->
     <section id="illustrator" class="portfolio-gallery">
       <h2></h2>
-      <figure data-title="The birth of shadows">
-        <img src="Images/SUNVOIDMOON.webp" alt="The birth of shadows"  />
-        <figcaption>The birth of shadows</figcaption>
-      </figure>
+     <div class="project-block">
+  <figure data-title="Sun, Moon & Void" class="video-project">
+    <video
+      class="project-video"
+      src="Images/Assignment1-MMA-Revised V2Motion_1.mp4"
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="Images/SUNVOIDMOON.webp">
+      <!-- Fallback text -->
+      Your browser does not support the video tag.
+    </video>
+    <figcaption>Birth of Shadows</figcaption>
+  </figure>
 
+  <!-- Optional: case study link for later -->
+  <a href="case-study-sun-moon-void.html"
+     class="case-study-link">
+    View Process
+  </a>
+</div>
 <figure
         data-title="Saturn Welcomes You">
         <img src="Images/Saturn-Welcomes you pt2.png" alt="Saturn Welcomes You" />
@@ -301,6 +319,39 @@
       }
     });
   </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('.project-video');
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: just play all videos
+    videos.forEach(v => {
+      v.play().catch(() => {});
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0; // reset when off-screen (optional)
+      }
+    });
+  }, {
+    threshold: 0.4   // play when ~40% visible
+  });
+
+  videos.forEach(video => {
+    observer.observe(video);
+  });
+});
+</script>
+
 
   <!-- Cursor effect (optimized) -->
   <!-- <script>
